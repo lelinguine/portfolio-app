@@ -2,9 +2,9 @@
   import { openWindow } from '../assets/window.js';
 
   const icons = [
-    { text: 'About', src: './src/assets/about.png' },
-    { text: 'Files', src: './src/assets/files.png' },
-    { text: 'More', src: './src/assets/more.png' }
+    { text: 'About', src: new URL('./../assets/about.png', import.meta.url).href },
+    { text: 'Files', src: new URL('./../assets/files.png', import.meta.url).href },
+    { text: 'More', src: new URL('./../assets/more.png', import.meta.url).href },
   ];
 </script>
 

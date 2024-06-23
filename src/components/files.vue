@@ -2,11 +2,11 @@
   import { openWindow } from '../assets/window.js';
 
   const files = [
-    { text: 'Minesweeper.dart', src: './src/assets/projects/minesweeper.gif' },
-    { text: 'Alone in space.py', src: './src/assets/projects/alone.png' },
-    // { text: 'Luigi bros.java', src: './src/assets/projects/brainine.gif' },
-    { text: 'Brainine.dart', src: './src/assets/projects/brainine.gif' },
-    { text: 'Supervision.dart', src: './src/assets/projects/supervision.gif' },
+    { text: 'Minesweeper.dart', src: new URL('./../assets/projects/minesweeper.gif', import.meta.url).href },
+    // { text: 'Alone in space.py', src: new URL('./../assets/projects/alone.png', import.meta.url).href },
+    // { text: 'Luigi bros.java', src: new URL('./../assets/projects/minesweeper.gif', import.meta.url).href },
+    { text: 'Brainine.dart', src: new URL('./../assets/projects/brainine.gif', import.meta.url).href },
+    { text: 'Supervision.dart', src: new URL('./../assets/projects/supervision.gif', import.meta.url).href },
   ];
 </script>
 
