@@ -3,6 +3,7 @@
   import Timer from '../src/components/timer.vue';
   import Icons from './components/icons.vue';
   import Manager from './components/manager.vue';
+  import Mouse from './components/mouse.vue';
 </script>
 
 <template>
@@ -14,6 +15,7 @@
     <main>
       <Icons />
       <Manager />
+      <Mouse />
     </main>
   </div>
 </template>
