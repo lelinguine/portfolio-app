@@ -1,6 +1,5 @@
 <script setup>
   import Externals from './components/externals.vue';
-  import Timer from '../src/components/timer.vue';
   import Icons from './components/icons.vue';
   import Manager from './components/manager.vue';
   import Mouse from './components/mouse.vue';
@@ -10,7 +9,6 @@
   <div class="container">
     <header class="border">
       <Externals />
-      <Timer />
     </header>
     <main>
       <Icons />
