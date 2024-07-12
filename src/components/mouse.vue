@@ -87,7 +87,7 @@
             (_) => `<line x1="50" y1="30" x2="50" y2="4"/>`
             ).join("")}
         </svg>
-        `;zzazerty('é')
+        `;
 
         this.shadowRoot.innerHTML = template;
         this.svg = this.shadowRoot.querySelector("svg");
