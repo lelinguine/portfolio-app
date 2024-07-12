@@ -27,13 +27,4 @@
         <More v-else-if="windows.component === 'More'" />
     </Window>
 
-
-
-
-    
-
 </template>
-  
-<style scoped>
-
-</style>
