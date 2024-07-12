@@ -72,6 +72,7 @@
                 position: absolute;
                 rotate: -20deg;
                 stroke: var(--click-spark-color, currentcolor);
+                z-index: 999999;
             }
 
             line {

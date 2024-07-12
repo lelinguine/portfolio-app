@@ -3,30 +3,28 @@
 
   const files = [
     { text: 'Minesweeper.dart', src: new URL('./../assets/projects/minesweeper.gif', import.meta.url).href },
-    // { text: 'Alone in space.py', src: new URL('./../assets/projects/alone.png', import.meta.url).href },
-    // { text: 'Luigi bros.java', src: new URL('./../assets/projects/minesweeper.gif', import.meta.url).href },
+    { text: 'Alone in space.py', src: new URL('./../assets/projects/alone.png', import.meta.url).href },
     { text: 'Brainine.dart', src: new URL('./../assets/projects/brainine.gif', import.meta.url).href },
     { text: 'Supervision.dart', src: new URL('./../assets/projects/supervision.gif', import.meta.url).href },
   ];
 </script>
 
 <template>
-  <div class="files-container">
+  <!-- <div class="files-container">
     <div v-for="(files, index) in files" :key="index" class="files" @click="openWindow(index, 'files', '')">
       <img :src="files.src" :alt="files.text" width="60">
       <p>{{ files.text }}</p>
     </div>
+  </div> -->
+  <div style="display: flex; align-items: center; justify-content: center; height: calc(100% - 40px);">
+    <p>Coming soon!</p>
   </div>
-</template>
+</template> 
   
 <style scoped>
     .files-container {
-        overflow: hidden;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 18px;
-        margin: 0.8rem 1rem;
-        max-height: calc(82%);
     }
 
     @media screen and (orientation: portrait) {
@@ -36,11 +34,11 @@
     }
 
     .files{
-
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        margin: 1rem;
     }
 
     .files p {
