@@ -22,7 +22,7 @@
 </template> 
   
 <style scoped>
-    .files-container {
+    /*.files-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
     }
@@ -55,94 +55,5 @@
         cursor: pointer;
         background-color: black;
         color: white;
-    }
+    }*/
 </style>
-
-
-
-<!-- <script setup>
-    const links = [
-        { text: 'Minesweeper.dart', img: new URL('./../assets/projects/minesweeper.gif', import.meta.url).href },
-        // { text: 'Alone in space.py', img: new URL('./../assets/projects/alone.png', import.meta.url).href },
-        // { text: 'Luigi bros.java', img: new URL('./../assets/projects/brainine.gif', import.meta.url).href },
-        { text: 'Brainine.dart', img: new URL('./../assets/projects/brainine.gif', import.meta.url).href },
-        { text: 'Supervision.dart', img: new URL('./../assets/projects/supervision.gif', import.meta.url).href },
-    ];
-</script>
-
-
-
-
-
-
-
-
-<template>
-  <div class="files-container">
-    <div v-for="(link, index) in links" :key="index" class="files">
-        <img :src="link.img" alt="logo" width="60">
-        <p class="link nav">{{ link.text }}</p>
-    </div>
-  </div>
-</template>
-  
-
-
-
-
-
-
-
-
-<style scoped>
-    .files-container {
-        overflow: hidden;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 18px;
-        padding: 0.6rem 1rem;
-        max-height: calc(82%);
-    }
-
-    @media screen and (max-width: 1200px) {
-        .files-container {
-            grid-template-columns: repeat(8, 1fr);
-        }
-    }
-
-    @media screen and (max-width: 768px) {
-        .files-container {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-
-    .files{
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .link {
-        margin-top: 0.2rem;
-        padding: 0 0.4rem;
-        white-space: nowrap;
-    }
-
-    .date {
-        color: var(--primary);
-    }
-
-    .files:hover .nav, .select {
-    cursor: pointer;
-    background-color: black;
-    color: white;
-    }
-
-    .files:hover {
-    cursor: pointer;
-    }
-</style> -->
-
-
