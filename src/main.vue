@@ -31,6 +31,5 @@ header {
   background-color: white;
   display: flex;
   justify-content: space-between;
-  z-index: 2147483647;
 }
 </style>

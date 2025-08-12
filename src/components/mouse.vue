@@ -95,8 +95,72 @@
     }
 
     customElements.define("click-spark", ClickSpark);
+
+    // Move cursor logic to Vue's mounted hook to ensure DOM is ready
+    export default {
+        mounted() {
+            const cursor = document.querySelector(".cursor");
+            if (cursor) {
+                window.addEventListener("mousemove", (e) => {
+                    cursor.style.left = e.clientX + "px";
+                    cursor.style.top = e.clientY + "px";
+                    cursor.style.display = "block";
+                });
+                document.body.addEventListener("mouseleave", () => {
+                    cursor.style.display = "none";
+                });
+
+                // Change cursor background on .icons hover
+                const icons = document.querySelectorAll(".hover");
+                icons.forEach(icon => {
+                    icon.addEventListener("mouseenter", () => {
+                        cursor.classList.add("enter");
+                    });
+                    icon.addEventListener("mouseleave", () => {
+                        cursor.classList.remove("enter");
+                    });
+                });
+
+                // Add click class when .header is clicked, unless cursor is already showing .cursor.png
+                const headers = document.querySelectorAll(".header");
+
+                headers.forEach(header => {
+                    header.addEventListener("mouseenter", () => {
+                        cursor.classList.add("hand");
+                    });
+                    header.addEventListener("mouseleave", () => {
+                        cursor.classList.remove("hand");
+                    });
+                });
+            }
+        }
+    };
 </script>
 
 <template>
     <click-spark></click-spark>
+    <div class="cursor"></div>
 </template>
+
+<style>
+    .cursor {
+        z-index: 100000;
+        position: fixed;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        width: 42px;
+        height: 42px;
+        background-image: url('../assets/mouse/pointor.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .enter {
+        background-image: url('../assets/mouse/cursor.png') !important;
+    }
+
+    .hand {
+        background-image: url('../assets/mouse/hand.png');
+    }
+</style>

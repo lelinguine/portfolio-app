@@ -10,7 +10,7 @@
 
 <template>
   <div class="icons-container">
-    <div v-for="(icons, index) in icons" :key="index" class="icons" @click="openWindow(index, 'icons', 'window')">
+    <div v-for="(icons, index) in icons" :key="index" class="icons hover" @click="openWindow(index, 'icons', 'window')">
       <img :src="icons.src" :alt="icons.text" width="40">
       <p>{{ icons.text }}</p>
     </div>
@@ -38,12 +38,7 @@
     padding: 0 0.4rem;
   }
 
-  .icons:hover {
-      cursor: pointer;
-  }
-
   .icons:hover p, .select {
-      cursor: pointer;
       background-color: black;
       color: white;
   }

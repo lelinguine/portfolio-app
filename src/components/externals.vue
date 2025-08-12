@@ -11,7 +11,7 @@
 
 <template>
     <div class="external-container">
-        <a v-for="(link, index) in links" :key="index" class="item external" :href="link.src" target="_blank">
+        <a v-for="(link, index) in links" :key="index" class="item external hover" :href="link.src" target="_blank">
           <img :src="link.img" width="20">
           <div class="disable">{{ link.text }}</div>
         </a>
@@ -27,6 +27,7 @@
     display: flex;
     align-items: center;
     padding: 0 0.6rem;
+    cursor: none;
   }
 
   .external img {

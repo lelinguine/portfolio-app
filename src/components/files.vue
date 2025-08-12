@@ -47,12 +47,7 @@
     white-space: nowrap;
     }
 
-    .files:hover {
-        cursor: pointer;
-    }
-
     .files:hover p, .select {
-        cursor: pointer;
         background-color: black;
         color: white;
     }*/

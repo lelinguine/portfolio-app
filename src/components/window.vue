@@ -28,7 +28,7 @@ const props = defineProps({
   <div :style="{ width: props.width, height: props.height, top: props.top, left: props.left }" class="window draggable shadow">
     <div class="header border">
       <p>{{ header }}</p>
-      <div class="close">
+      <div class="close hover">
         <img src="../assets/cross.svg" alt="close" width="15"/>
       </div>
     </div>
@@ -58,7 +58,6 @@ const props = defineProps({
     width: 100%;
     height: 38px;
     background-color: white;
-    cursor: move;
     color: black;
     display: flex;
     justify-content: center;
@@ -77,7 +76,6 @@ const props = defineProps({
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
     padding: 0 0.5rem 0;
   }
 </style>
