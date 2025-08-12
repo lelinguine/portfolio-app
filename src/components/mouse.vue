@@ -14,7 +14,7 @@
     connectedCallback() {
         this.setupSpark();
 
-        this.root.addEventListener("click", (e) => {
+        this.root.addEventListener("mousedown", (e) => {
         if (this.activeEls && !e.target.matches(this.activeEls)) return;
 
         this.setSparkPosition(e);
@@ -144,7 +144,7 @@
 
 <style>
     .cursor {
-        z-index: 100000;
+        z-index: 9999999;
         position: fixed;
         pointer-events: none;
         transform: translate(-50%, -50%);
