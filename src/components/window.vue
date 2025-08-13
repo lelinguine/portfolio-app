@@ -60,11 +60,11 @@ const props = defineProps({
     display: none;
   }
 
-  .display {
-    display: block;
-  }
-
   @media screen and (orientation: landscape) {
+    .display {
+      display: block;
+    }
+
     .other {
       display: block;
     }
