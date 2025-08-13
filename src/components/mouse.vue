@@ -164,8 +164,8 @@
         position: fixed;
         pointer-events: none;
         transform: translate(-50%, -50%);
-        width: 42px;
-        height: 42px;
+        width: 38px;
+        height: 38px;
         background-image: url('../assets/mouse/pointor.png');
         background-size: contain;
         background-repeat: no-repeat;
