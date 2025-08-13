@@ -1,3 +1,5 @@
+import { getNextZIndex } from './draggable.js';
+
 export function openWindow(index, file, window) {
     const files = document.querySelectorAll('.' + file);
     files.forEach(file => {
@@ -10,10 +12,10 @@ export function openWindow(index, file, window) {
     const windows = document.querySelectorAll('.' + window);
     windows.forEach(window => {
         window.querySelector('.header').classList.remove('select');
-        // window.style.display = 'none';
     });
 
     const targetWindow = windows[index];
     targetWindow.style.display = 'block';
+    targetWindow.style.zIndex = getNextZIndex();
     targetWindow.querySelector('.header').classList.add('select');
 };

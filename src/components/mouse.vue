@@ -154,6 +154,7 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
+        display: none;
     }
 
     .enter {
