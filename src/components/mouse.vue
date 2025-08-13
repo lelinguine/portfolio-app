@@ -19,9 +19,10 @@
         // Function to play click sound
         const playClickSound = () => {
             if (clickSound) {
-                clickSound.playbackRate = 1.3; // Play sound 2x faster
-                clickSound.currentTime = 0; // Reset to start for rapid clicks
-                clickSound.play().catch(e => console.log('Audio play failed:', e));
+            clickSound.playbackRate = 1.25; // Play sound 2x faster
+            clickSound.currentTime = 0; // Reset to start for rapid clicks
+            clickSound.volume = 0.25; // Set sound level to half
+            clickSound.play().catch(e => console.log('Audio play failed:', e));
             }
         };
 
