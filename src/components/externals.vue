@@ -1,11 +1,10 @@
 <script setup>
   const links = [
+    { text: 'Behance', src: 'https://www.behance.net/valentiluginb', img: new URL('./../assets/externals/behance.png', import.meta.url).href },
     { text: 'Codepen', src: 'https://codepen.io/lelinguine', img: new URL('./../assets/externals/codepen.png', import.meta.url).href },
     // { text: 'Dribble', src: 'https://dribbble.com/lelinguine/about', img: new URL('./../assets/externals/dribble.png', import.meta.url).href },
     { text: 'Figma', src: 'https://www.figma.com/@lelinguine', img: new URL('./../assets/externals/figma.png', import.meta.url).href },
-    { text: 'Github', src: 'https://github.com/lelinguine', img: new URL('./../assets/externals/github.png', import.meta.url).href },
-    // { text: 'Layers', src: 'https://layers.to/lelinguine', img: new URL('./../assets/externals/layers.png', import.meta.url).href },
-    // { text: 'Read', src: 'https://read.cv/lelinguine', img: new URL('./../assets/externals/read.png', import.meta.url).href }
+    { text: 'Github', src: 'https://github.com/lelinguine', img: new URL('./../assets/externals/github.png', import.meta.url).href }
   ];
 </script>
 
