@@ -64,11 +64,11 @@ const props = defineProps({
     display: block;
   }
 
-  @media screen and (orientation: landscape) {
+  /* @media screen and (orientation: landscape) {
     .other {
       display: block;
     }
-  }
+  } */
 
   .header {
     width: 100%;
