@@ -25,8 +25,14 @@ const props = defineProps({
 </script>
 
 <template>
-  <div :style="{ width: props.width, height: props.height, top: props.top, left: props.left }" class="window draggable shadow">
-    <div class="header border">
+  <div
+    :style="{ width: props.width, height: props.height, top: props.top, left: props.left }"
+    :class="[
+      'window draggable shadow',
+      { display: header === 'About', other: header !== 'About' }
+    ]"
+  >
+    <div :class="['header border', { select: header === 'About' }]">
       <p>{{ header }}</p>
       <div class="close hover">
         <img src="../assets/cross.svg" alt="close" width="15"/>
@@ -52,6 +58,16 @@ const props = defineProps({
     background-color: white;
     border: solid 2px black;
     display: none;
+  }
+
+  .display {
+    display: block;
+  }
+
+  @media screen and (orientation: landscape) {
+    .other {
+      display: block;
+    }
   }
 
   .header {

@@ -12,7 +12,7 @@
   <div class="icons-container">
     <div v-for="(icons, index) in icons" :key="index" class="icons hover" @click="openWindow(index, 'icons', 'window')">
       <img :src="icons.src" :alt="icons.text" width="40">
-      <p>{{ icons.text }}</p>
+      <p :class="{ select: icons.text === 'About' }">{{ icons.text }}</p>
     </div>
   </div>
 </template>
