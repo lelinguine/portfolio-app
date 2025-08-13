@@ -3,12 +3,14 @@
   import Icons from './components/icons.vue';
   import Manager from './components/manager.vue';
   import Mouse from './components/mouse.vue';
+  import Timer from './components/timer.vue';
 </script>
 
 <template>
   <div class="container">
     <header class="border">
       <Externals />
+      <Timer />
     </header>
     <main>
       <Icons />
