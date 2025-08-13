@@ -14,11 +14,23 @@
     connectedCallback() {
         this.setupSpark();
 
-        this.root.addEventListener("mousedown", (e) => {
-        if (this.activeEls && !e.target.matches(this.activeEls)) return;
+        const clickSound = document.querySelector(".click-sound");
+                
+        // Function to play click sound
+        const playClickSound = () => {
+            if (clickSound) {
+                clickSound.playbackRate = 1.4; // Play sound 2x faster
+                clickSound.currentTime = 0; // Reset to start for rapid clicks
+                clickSound.play().catch(e => console.log('Audio play failed:', e));
+            }
+        };
 
-        this.setSparkPosition(e);
-        this.animateSpark();
+        this.root.addEventListener("mousedown", (e) => {
+            if (this.activeEls && !e.target.matches(this.activeEls)) return;
+            
+            playClickSound();
+            this.setSparkPosition(e);
+            this.animateSpark();
         });
     }
 
@@ -100,6 +112,7 @@
     export default {
         mounted() {
             const cursor = document.querySelector(".cursor");
+
             if (cursor) {
                 window.addEventListener("mousemove", (e) => {
                     cursor.style.left = e.clientX + "px";
@@ -140,6 +153,9 @@
 <template>
     <click-spark></click-spark>
     <div class="cursor"></div>
+    <audio class="click-sound" preload="auto">
+        <source src="../assets/mouse/sound.mp3" type="audio/mpeg">
+    </audio>
 </template>
 
 <style>
