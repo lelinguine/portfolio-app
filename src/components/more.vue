@@ -2,7 +2,7 @@
   <div class="more-container">
     <div class="more">
       <p class="title">What do you want to see? 👀</p>
-      <p class="version normal">Version 2.1-a - 2025</p>
+      <p class="version">Version 2.1-a - 2025</p>
     </div>
   </div>
 </template>
@@ -22,4 +22,8 @@
     align-items: center;
     justify-content: center;
   }
+
+  /* .version {
+    color: var(--primary);
+  } */
 </style>

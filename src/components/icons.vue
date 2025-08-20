@@ -12,7 +12,7 @@
   <div class="icons-container">
     <div v-for="(icons, index) in icons" :key="index" class="icons hover" @click="openWindow(index, 'icons', 'window')">
       <img :src="icons.src" :alt="icons.text" width="40">
-      <p>{{ icons.text }}</p>
+      <p :class="{ select: icons.text === 'Files' }">{{ icons.text }}</p>
     </div>
   </div>
 </template>
@@ -23,14 +23,14 @@
     flex-direction: column;
     align-items: center;
     width: fit-content;
-    margin: 0.8rem 1rem;
+    margin: 1.2rem 1rem;
+    gap: 1rem;
   }
 
   .icons {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0.6rem 0rem;
   }
 
   .icons p {
