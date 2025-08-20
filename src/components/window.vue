@@ -28,11 +28,11 @@ const props = defineProps({
   <div
     :style="{ width: props.width, height: props.height, top: props.top, left: props.left }"
     :class="[
-      'window draggable shadow',
+      'window draggable border shadow',
       { display: header === 'About', other: header !== 'About' }
     ]"
   >
-    <div :class="['header border', { select: header === 'About' }]">
+    <div :class="['header header-border', { select: header === 'About' }]">
       <p>{{ header }}</p>
       <div class="close hover">
         <img src="../assets/cross.svg" alt="close" width="15"/>
@@ -55,8 +55,7 @@ const props = defineProps({
 
   .draggable {
     position: absolute;
-    background-color: white;
-    border: solid 2px black;
+    background-color: var(--white);
     display: none;
   }
 
@@ -73,8 +72,8 @@ const props = defineProps({
   .header {
     width: 100%;
     height: 38px;
-    background-color: white;
-    color: black;
+    background-color: var(--white);
+    color: var(--black);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -83,11 +82,12 @@ const props = defineProps({
 
   .select {
     filter: invert(100%);
+    border-bottom: solid 2px var(--white);
   }
 
   .close {
     position: absolute;
-    right: 0;
+    right: 0.5rem;
     height: 100%;
     display: flex;
     justify-content: center;

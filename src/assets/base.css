@@ -1,5 +1,7 @@
 :root {
   --primary: #708090;
+  --black: #000000;
+  --white: #FFFFFF;
 }
 
 @font-face {
@@ -18,7 +20,6 @@
 }
 
 body {
-  cursor: none;
   margin: 0;
   background: var(--primary);
   font-family:
@@ -41,6 +42,13 @@ body {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  overflow: hidden;
+}
+
+@media screen and (orientation: landscape) {
+  body {
+    cursor: none;
+  }
 }
 
 h1 {
@@ -60,7 +68,7 @@ a, p {
 }
 
 a {
-  color: black;
+  color: var(--black);
   text-decoration: none;
 }
 

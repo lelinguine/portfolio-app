@@ -19,3 +19,8 @@ export function openWindow(index, file, window) {
     targetWindow.style.zIndex = getNextZIndex();
     targetWindow.querySelector('.header').classList.add('select');
 };
+
+export function openFiles() {
+    const infos = document.querySelector('.infos-container');
+    infos.innerHTML = '<p>Selected</p>';
+};
