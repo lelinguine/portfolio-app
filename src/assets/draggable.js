@@ -34,6 +34,11 @@ window.onload = function () {
           dragEl = null;
           document.onmousemove = document.onmouseup = null;
         };
+        // Stop si la souris sort de la fenêtre
+        document.body.addEventListener("mouseleave", () => {
+          dragEl = null;
+          document.onmousemove = document.onmouseup = null;
+        });
       };
     }
 

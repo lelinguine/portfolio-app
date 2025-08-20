@@ -8,23 +8,23 @@
 
 <template>
   <div class="container">
-    <header class="border">
+    <header class="header-border">
       <Externals />
+      <!-- <div class="title-container">
+        <h1>Portfolio</h1>
+      </div> -->
       <div class="timer-container">
         <Timer />
       </div>
-      
-
-      <div class="abstract">
-        <h1>Portfolio</h1>
-      </div>
-
     </header>
     <main>
       <Icons />
       <Manager />
       <Mouse />
     </main>
+  </div>
+  <div class="soon">
+    <p>Coming soon!</p>
   </div>
 </template>
 
@@ -38,36 +38,43 @@
 
   header {
     height: 38px;
-    background-color: white;
+    background-color: var(--white);
     display: flex;
     justify-content: space-between;
-  }
-
-  .abstract {
-    height: 38px;
-    display: flex;
-    align-items: center;
-    padding: 0 0.6rem;
+    z-index: 999999;
   }
 
   .timer-container {
+    display: flex;
+    align-items: center;
+    height: 38px;
+  }
+
+  .title-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 38px;
+    display: flex;
+    align-items: center;
+  }
+
+  .soon {
     display: none;
   }
-  
-  @media screen and (orientation: landscape) {
-    .abstract {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      height: 38px;
-      display: flex;
-      align-items: center;
+
+  @media screen and (max-width: 375px) {
+    .container {
+      display: none;
     }
 
-    .timer-container {
+    .soon {
       display: flex;
+      height: 100vh;
       align-items: center;
-      height: 38px;
+      justify-content: center;
+      background-color: var(--white);
+      cursor: default;
     }
   }
 

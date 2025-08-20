@@ -1,54 +1,120 @@
 <script setup>
-  import { openWindow } from '../assets/window.js';
+  import { openFiles } from '../assets/window.js';
 
   const files = [
-    { text: 'Minesweeper.dart', src: new URL('./../assets/projects/minesweeper.gif', import.meta.url).href },
-    { text: 'Alone in space.py', src: new URL('./../assets/projects/alone.png', import.meta.url).href },
-    { text: 'Brainine.dart', src: new URL('./../assets/projects/brainine.gif', import.meta.url).href },
-    { text: 'Supervision.dart', src: new URL('./../assets/projects/supervision.gif', import.meta.url).href },
+    { text: 'Portfolio', src: new URL('./../assets/files.png', import.meta.url).href },
+    { text: 'Sitomnia', src: new URL('./../assets/projects/minesweeper.gif', import.meta.url).href },
+    { text: 'Othello', src: new URL('./../assets/projects/alone.png', import.meta.url).href },
+    { text: 'Brainine', src: new URL('./../assets/projects/brainine.gif', import.meta.url).href }
   ];
 </script>
 
 <template>
-  <!-- <div class="files-container">
-    <div v-for="(files, index) in files" :key="index" class="files" @click="openWindow(index, 'files', '')">
-      <img :src="files.src" :alt="files.text" width="60">
-      <p>{{ files.text }}</p>
+
+
+
+  <div class="files-window">
+    <div class="files-container">
+
+      <!-- <div
+        v-for="(file, index) in files"
+        :key="index"
+        class="files hover"
+        :class="{ 'header-border': index !== files.length - 1 }"
+        @click="openFiles()"
+      >
+        <p :class="{ select: file.text === 'About' }">{{ file.text }}</p>
+      </div> -->
+
+
+      <p>Coming soon!</p>
+
+
+
+
+
+
+
     </div>
-  </div> -->
-  <div style="display: flex; align-items: center; justify-content: center; height: calc(100% - 40px);">
-    <p>Coming soon!</p>
+
+    <div class="infos-container">
+      <p>No selected file.</p>
+    </div>
   </div>
+
 </template> 
   
 <style scoped>
-    /*.files-container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
+  .files-window {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      height: calc(100% - 40px);
+  }
+
+  .infos-container {
+    border-left: solid 2px var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media screen and (orientation: portrait) {
+    .files-window {
+      grid-template-rows: 2fr 1fr;
+      grid-template-columns: unset;
     }
 
-    @media screen and (orientation: portrait) {
-        .files-container {
-            grid-template-columns: repeat(2, 1fr);
-        }
+    .infos-container {
+      border-top: solid 2px var(--black);
+      border-left: unset;
     }
+  }
 
-    .files{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin: 1rem;
-    }
+  .files-container {
+    overflow-y: scroll;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-    .files p {
-    margin-top: 0.2rem;
-    padding: 0 1rem;
-    white-space: nowrap;
-    }
 
-    .files:hover p, .select {
-        background-color: black;
-        color: white;
-    }*/
+
+
+
+
+
+  .files {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .files p {
+    padding: 0.6rem 0rem;
+  }
+
+  .files img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .files:hover p, .select {
+      background-color: var(--black);
+      color: var(--white);
+  }
+
+
+
+
+  
+    
+
+
+
+
+
+
+
+
 </style>
