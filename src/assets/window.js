@@ -31,7 +31,7 @@ export function openFiles(index, file, project) {
 
     const infos = document.querySelector('.infos-container');
     // Charger le template générique
-    fetch('src/assets/projects/details.html')
+    fetch('/details.html')
         .then(response => response.text())
         .then(html => {
             // Remplacer les variables par les valeurs du projet
