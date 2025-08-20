@@ -26,7 +26,6 @@
     display: flex;
     align-items: center;
     padding: 0 0.6rem;
-    cursor: none;
   }
 
   .external img {

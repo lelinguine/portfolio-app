@@ -1,0 +1,28 @@
+<div class="details">
+  <p class="title">{{text}}</p>
+  <p>{{date}}</p>
+  <a class="button hover" href="{{link}}" target="_blank">
+    <p>Run project</p>
+  </a>
+</div>
+
+<style>
+  .details {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .button {
+    background-color: var(--black);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    padding: 0 0.4rem;
+  }
+</style>

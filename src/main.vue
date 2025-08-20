@@ -10,9 +10,9 @@
   <div class="container">
     <header class="header-border">
       <Externals />
-      <!-- <div class="title-container">
+      <div class="title-container">
         <h1>Portfolio</h1>
-      </div> -->
+      </div>
       <div class="timer-container">
         <Timer />
       </div>
@@ -51,12 +51,18 @@
   }
 
   .title-container {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 38px;
-    display: flex;
-    align-items: center;
+    display: none;
+  }
+
+  @media screen and (min-width: 926px) {
+    .title-container {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 38px;
+      display: flex;
+      align-items: center;
+    }
   }
 
   .soon {

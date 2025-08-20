@@ -2,46 +2,40 @@
   import { openFiles } from '../assets/window.js';
 
   const files = [
-    { text: 'Portfolio', src: new URL('./../assets/files.png', import.meta.url).href },
-    { text: 'Sitomnia', src: new URL('./../assets/projects/minesweeper.gif', import.meta.url).href },
-    { text: 'Othello', src: new URL('./../assets/projects/alone.png', import.meta.url).href },
-    { text: 'Brainine', src: new URL('./../assets/projects/brainine.gif', import.meta.url).href }
+    { text: 'Portfolio', date: '08.2025', src: new URL('./../assets/projects/', import.meta.url).href, data: 'portfolio', link: "#" },
+    { text: 'Sitomnia', date: '06.2025', src: new URL('./../assets/projects/', import.meta.url).href, data: 'sitomnia', link: "http://valentinluginbuhl.fr:3000/" },
+    { text: 'Othello', date: '01.2025', src: new URL('./../assets/projects/', import.meta.url).href, data: 'Othello', link: "https://othello-project.vercel.app/" },
   ];
 </script>
 
 <template>
-
-
-
   <div class="files-window">
     <div class="files-container">
-
-      <!-- <div
+      <div class="categories">
+        <div class="data">
+          <p>Projects</p>
+          <p>Time</p>
+        </div>
+      </div>
+      <div
         v-for="(file, index) in files"
         :key="index"
         class="files hover"
-        :class="{ 'header-border': index !== files.length - 1 }"
-        @click="openFiles()"
+        @click="openFiles(index, 'files', file)"
       >
-        <p :class="{ select: file.text === 'About' }">{{ file.text }}</p>
-      </div> -->
-
-
-      <p>Coming soon!</p>
-
-
-
-
-
-
-
+        <!-- <img :src="file.src"> -->
+        <div class="tmp"></div>
+        <div class="data">
+          <p>{{ file.text }}</p>
+          <p class="date">{{ file.date }}</p>
+        </div>
+      </div>
+      <!-- <p>Coming soon!</p> -->
     </div>
-
     <div class="infos-container">
       <p>No selected file.</p>
     </div>
   </div>
-
 </template> 
   
 <style scoped>
@@ -50,71 +44,52 @@
       grid-template-columns: 2fr 1fr;
       height: calc(100% - 40px);
   }
-
   .infos-container {
     border-left: solid 2px var(--black);
     display: flex;
     align-items: center;
     justify-content: center;
   }
-
   @media screen and (orientation: portrait) {
     .files-window {
       grid-template-rows: 2fr 1fr;
       grid-template-columns: unset;
     }
-
     .infos-container {
       border-top: solid 2px var(--black);
       border-left: unset;
     }
   }
-
   .files-container {
-    overflow-y: scroll;
-    display: flex;
+    overflow-y: auto;
+    /* display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
   }
-
-
-
-
-
-
-
-  .files {
+  .files, .categories {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 1rem;
+    gap: 0.8rem;
+    padding: 0rem 0.8rem;
+    height: 40px;
   }
-
-  .files p {
-    padding: 0.6rem 0rem;
+  .data {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
   }
-
   .files img {
     width: 20px;
-    height: 20px;
+    height: 18.5px;
   }
-
-  .files:hover p, .select {
+  .tmp {
+    width: 20px;
+    height: 18.5px;
+    background-color: var(--black);
+  }
+  .files:hover p:not(.date), .select {
       background-color: var(--black);
       color: var(--white);
   }
-
-
-
-
-  
-    
-
-
-
-
-
-
-
-
 </style>

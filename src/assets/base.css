@@ -46,7 +46,7 @@ body {
 }
 
 @media screen and (orientation: landscape) {
-  body {
+  body, body * {
     cursor: none;
   }
 }

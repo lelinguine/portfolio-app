@@ -32,11 +32,17 @@ export default {
             cursor.style.display = "none";
         });
 
-        // Cursor style on hover
-        document.querySelectorAll(".hover").forEach(icon => {
-            icon.addEventListener("mouseenter", () => cursor.classList.add("enter"));
-            icon.addEventListener("mouseleave", () => cursor.classList.remove("enter"));
-        });
+        // Cursor style on hover (delegation pour éléments dynamiques)
+        document.addEventListener("mouseenter", e => {
+            if (e.target.classList && e.target.classList.contains("hover")) {
+                cursor.classList.add("enter");
+            }
+        }, true);
+        document.addEventListener("mouseleave", e => {
+            if (e.target.classList && e.target.classList.contains("hover")) {
+                cursor.classList.remove("enter");
+            }
+        }, true);
         document.querySelectorAll(".header").forEach(header => {
             header.addEventListener("mouseenter", () => cursor.classList.add("hand"));
             header.addEventListener("mouseleave", () => cursor.classList.remove("hand"));
