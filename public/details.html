@@ -4,6 +4,9 @@
   <a class="button hover" href="{{link}}" target="_blank">
     <p>Run project</p>
   </a>
+  <div class="description">
+    {{description}}
+  </div>
 </div>
 
 <style>
@@ -14,15 +17,24 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      padding: 0rem 0.8rem;
   }
-
   .button {
     background-color: var(--black);
     color: var(--white);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 1rem;
+    margin: 1rem 0rem ;
     padding: 0 0.4rem;
+  }
+  .description {
+    width: 100%;
+  }
+  .details img {
+    height: 40px;
+  }
+  .picture {
+    display: inline-block;
   }
 </style>

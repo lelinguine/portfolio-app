@@ -1,5 +1,5 @@
 <script setup>
-  import { openFiles } from '../assets/window.js';
+  import { openFiles } from '../assets/open.js';
 
   const files = [
     { text: 'Portfolio', date: '08.2025', src: new URL('./../assets/projects/', import.meta.url).href, data: 'portfolio', link: "#" },
