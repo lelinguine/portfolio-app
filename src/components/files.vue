@@ -2,9 +2,9 @@
   import { openFiles } from '../assets/open.js';
 
   const files = [
-    { text: 'Portfolio', date: '08.2025', src: new URL('./../assets/projects/', import.meta.url).href, data: 'portfolio', link: "#" },
-    { text: 'Sitomnia', date: '06.2025', src: new URL('./../assets/projects/', import.meta.url).href, data: 'sitomnia', link: "http://valentinluginbuhl.fr:3000/" },
-    { text: 'Othello', date: '01.2025', src: new URL('./../assets/projects/', import.meta.url).href, data: 'Othello', link: "https://othello-project.vercel.app/" },
+    { number: "1", text: 'Portfolio', date: '08.2025', src: new URL('./../assets/projects/', import.meta.url).href, data: 'portfolio', link: "#" },
+    { number: "2", text: 'Sitomnia', date: '06.2025', src: new URL('./../assets/projects/', import.meta.url).href, data: 'sitomnia', link: "http://valentinluginbuhl.fr:3000/" },
+    { number: "3", text: 'Othello', date: '01.2025', src: new URL('./../assets/projects/', import.meta.url).href, data: 'Othello', link: "https://othello-project.vercel.app/" },
   ];
 </script>
 
@@ -23,14 +23,12 @@
         class="files hover"
         @click="openFiles(index, 'files', file)"
       >
-        <!-- <img :src="file.src"> -->
-        <div class="tmp"></div>
+        <p>{{ file.number }}.</p>
         <div class="data">
-          <p>{{ file.text }}</p>
+          <p class="text">{{ file.text }}</p>
           <p class="date">{{ file.date }}</p>
         </div>
       </div>
-      <!-- <p>Coming soon!</p> -->
     </div>
     <div class="infos-container">
       <p>No selected file.</p>
@@ -62,9 +60,6 @@
   }
   .files-container {
     overflow-y: auto;
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
   }
   .files, .categories {
     display: flex;
@@ -79,16 +74,7 @@
     justify-content: space-between;
     width: 100%;
   }
-  .files img {
-    width: 20px;
-    height: 18.5px;
-  }
-  .tmp {
-    width: 20px;
-    height: 18.5px;
-    background-color: var(--black);
-  }
-  .files:hover p:not(.date), .select {
+  .files:hover p.text, .select {
       background-color: var(--black);
       color: var(--white);
   }
