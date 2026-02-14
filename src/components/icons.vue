@@ -1,45 +1,61 @@
 <script setup>
-  import { openWindow } from '../assets/window.js';
+import { openWindow } from '../assets/window.js'
 
-  const icons = [
-    { text: 'About', src: new URL('./../assets/about.png', import.meta.url).href },
-    { text: 'Files', src: new URL('./../assets/files.png', import.meta.url).href },
-    { text: 'More', src: new URL('./../assets/more.png', import.meta.url).href },
-  ];
+const icons = [
+  {
+    text: 'About',
+    src: new URL('./../assets/about.png', import.meta.url).href,
+  },
+  {
+    text: 'Files',
+    src: new URL('./../assets/files.png', import.meta.url).href,
+  },
+  { text: 'More', src: new URL('./../assets/more.png', import.meta.url).href },
+]
 </script>
 
 <template>
   <div class="icons-container">
-    <div v-for="(icons, index) in icons" :key="index" class="icons hover" @click="openWindow(index, 'icons', 'window')">
-      <img :src="icons.src" :alt="icons.text" width="40">
+    <div
+      v-for="(icons, index) in icons"
+      :key="index"
+      class="icons hover"
+      @click="openWindow(index, 'icons', 'window')"
+    >
+      <img
+        :src="icons.src"
+        :alt="icons.text"
+        width="40"
+      />
       <p :class="{ select: icons.text === 'Files' }">{{ icons.text }}</p>
     </div>
   </div>
 </template>
-  
+
 <style scoped>
-  .icons-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: fit-content;
-    margin: 1.2rem 1rem;
-    gap: 1rem;
-  }
+.icons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  margin: 1.2rem 1rem;
+  gap: 1rem;
+}
 
-  .icons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+.icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  .icons p {
-    margin-top: 0.2rem;
-    padding: 0 0.4rem;
-  }
+.icons p {
+  margin-top: 0.2rem;
+  padding: 0 0.4rem;
+}
 
-  .icons:hover p, .select {
-      background-color: var(--black);
-      color: var(--white);
-  }
+.icons:hover p,
+.select {
+  background-color: var(--black);
+  color: var(--white);
+}
 </style>

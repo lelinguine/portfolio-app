@@ -1,7 +1,10 @@
 :root {
   --primary: #708090;
   --black: #000000;
-  --white: #FFFFFF;
+  --white: #ffffff;
+
+  --padding: 20px;
+  --gap: 20px;
 }
 
 @font-face {
@@ -46,7 +49,8 @@ body {
 }
 
 @media screen and (orientation: landscape) {
-  body, body * {
+  body,
+  body * {
     cursor: none;
   }
 }
@@ -61,7 +65,8 @@ h1 {
   font-size: 1rem;
 }
 
-a, p {
+a,
+p {
   margin: 0;
   font-family: 'Poppins-Bold', sans-serif;
   font-size: 0.8rem;
