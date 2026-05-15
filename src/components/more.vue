@@ -2,7 +2,7 @@
   <div class="more-container">
     <div class="more">
       <p class="title">What do you want to see? 👀</p>
-      <p class="version">Version 2.2-a - 2026</p>
+      <p class="version">Version 2.2 - 2026</p>
     </div>
   </div>
 </template>
@@ -21,6 +21,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: calc(var(--padding) * 4);
+  margin: var(--padding);
 }
 </style>

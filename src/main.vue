@@ -11,7 +11,7 @@ import Timer from './components/timer.vue'
     <header class="header-border">
       <Externals />
       <div class="title-container">
-        <h1>Portfolio</h1>
+        <h1>PORTFOLIO</h1>
       </div>
       <div class="timer-container">
         <Timer />

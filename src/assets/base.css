@@ -25,6 +25,9 @@
 body {
   margin: 0;
   background: var(--primary);
+  background-image: url('./richter_zari.jpg');
+  background-size: cover;
+  background-position: center;
   font-family:
     Inter,
     -apple-system,
@@ -57,7 +60,7 @@ body {
 
 h1 {
   margin: 0;
-  font-family: 'Poppins-Bold', sans-serif;
+  font-family: 'Poly-Regular', sans-serif;
   font-size: 1.2rem;
 }
 

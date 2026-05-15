@@ -8,7 +8,7 @@
         width="90"
       />
       <p class="title">Valentin LUGINBÜHL</p>
-      <h1>DESIGNER & DEVELOPER</h1>
+      <h1>DEVELOPER & DESIGNER</h1>
       <div class="student"><p>(Student)</p></div>
     </div>
     <div class="about-description">
@@ -49,6 +49,7 @@
 .student {
   display: flex;
   justify-content: end;
+  margin-top: -0.2rem;
 }
 
 .about-description {

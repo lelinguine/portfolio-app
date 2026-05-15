@@ -15,8 +15,7 @@ const files = [
     text: 'Sitomnia',
     date: '06.2025',
     src: new URL('./../assets/projects/', import.meta.url).href,
-    data: 'sitomnia',
-    link: 'http://valentinluginbuhl.fr:3000/',
+    link: 'https://sitomnia.valentinluginbuhl.fr/',
   },
   {
     number: '3',
@@ -24,7 +23,8 @@ const files = [
     date: '01.2025',
     src: new URL('./../assets/projects/', import.meta.url).href,
     data: 'Othello',
-    link: 'https://othello-project.vercel.app/',
+
+    link: 'https://othello.valentinluginbuhl.fr/',
   },
 ]
 </script>
@@ -34,10 +34,11 @@ const files = [
     <div class="files-container">
       <div class="categories">
         <div class="data">
-          <p>Projects</p>
-          <p>Time</p>
+          <p>Projects:</p>
+          <p>Created at:</p>
         </div>
       </div>
+
       <div
         v-for="(file, index) in files"
         :key="index"
@@ -51,9 +52,7 @@ const files = [
         </div>
       </div>
     </div>
-    <div class="infos-container">
-      <p>No selected file.</p>
-    </div>
+    <div class="infos-container"><p>No selected file.</p></div>
   </div>
 </template>
 

@@ -23,7 +23,7 @@ const windows = [
     component: 'More',
     top: '60%',
     left: '20%',
-    width: 'fit-content',
+    width: '340px',
     height: 'fit-content',
   },
 ]
