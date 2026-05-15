@@ -6,10 +6,12 @@ const icons = [
     text: 'About',
     src: new URL('./../assets/about.png', import.meta.url).href,
   },
+  // { text: 'Gallery', src: new URL('./../assets/more.png', import.meta.url).href },
   {
     text: 'Files',
     src: new URL('./../assets/files.png', import.meta.url).href,
   },
+  // { text: 'Contact', src: new URL('./../assets/more.png', import.meta.url).href },
   { text: 'More', src: new URL('./../assets/more.png', import.meta.url).href },
 ]
 </script>
@@ -51,6 +53,7 @@ const icons = [
 .icons p {
   margin-top: 0.2rem;
   padding: 0 0.4rem;
+  color: var(--white);
 }
 
 .icons:hover p,

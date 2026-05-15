@@ -33,10 +33,10 @@ const props = defineProps({
     }"
     :class="[
       'window draggable border shadow',
-      { display: header === 'Files', other: header !== 'Files' },
+      { display: header === 'About', other: header !== 'About' },
     ]"
   >
-    <div :class="['header header-border', { select: header === 'Files' }]">
+    <div :class="['header header-border', { select: header === 'About' }]">
       <p>{{ header }}</p>
       <div class="close hover">
         <img
@@ -65,15 +65,14 @@ const props = defineProps({
   background-color: var(--white);
   display: none;
 }
-.display,
-.other {
+.display {
   display: block;
 }
-@media screen and (orientation: portrait) {
-  .other {
-    display: none;
-  }
+
+.other {
+  display: none;
 }
+
 .header {
   width: 100%;
   height: 38px;
