@@ -1,9 +1,9 @@
 <script setup>
-  import Externals from './components/externals.vue';
-  import Icons from './components/icons.vue';
-  import Manager from './components/manager.vue';
-  import Mouse from './components/mouse.vue';
-  import Timer from './components/timer.vue';
+import Externals from "./components/externals.vue";
+import Icons from "./components/icons.vue";
+import Manager from "./components/manager.vue";
+import Mouse from "./components/mouse.vue";
+import Timer from "./components/timer.vue";
 </script>
 
 <template>
@@ -18,70 +18,56 @@
       </div>
     </header>
     <main>
-      <Icons />
-      <Manager />
       <Mouse />
+      <div class="soon">
+        <p>Coming soon!</p>
+      </div>
     </main>
-  </div>
-  <div class="soon">
-    <p>Coming soon!</p>
   </div>
 </template>
 
 <style scoped>
-  .container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    width: 100vw;
-  }
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
 
-  header {
+header {
+  height: 38px;
+  background-color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  z-index: 999999;
+}
+
+.timer-container {
+  display: flex;
+  align-items: center;
+  height: 38px;
+}
+
+.title-container {
+  display: none;
+}
+
+@media screen and (min-width: 926px) {
+  .title-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     height: 38px;
-    background-color: var(--white);
-    display: flex;
-    justify-content: space-between;
-    z-index: 999999;
-  }
-
-  .timer-container {
     display: flex;
     align-items: center;
-    height: 38px;
   }
+}
 
-  .title-container {
-    display: none;
-  }
-
-  @media screen and (min-width: 926px) {
-    .title-container {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      height: 38px;
-      display: flex;
-      align-items: center;
-    }
-  }
-
-  .soon {
-    display: none;
-  }
-
-  @media screen and (max-width: 375px) {
-    .container {
-      display: none;
-    }
-
-    .soon {
-      display: flex;
-      height: 100vh;
-      align-items: center;
-      justify-content: center;
-      background-color: var(--white);
-      cursor: default;
-    }
-  }
-
+.soon {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white);
+}
 </style>

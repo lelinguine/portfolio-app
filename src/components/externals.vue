@@ -1,48 +1,66 @@
 <script setup>
-  const links = [
-    { text: 'Behance', src: 'https://www.behance.net/valentiluginb', img: new URL('./../assets/externals/behance.png', import.meta.url).href },
-    { text: 'Codepen', src: 'https://codepen.io/lelinguine', img: new URL('./../assets/externals/codepen.png', import.meta.url).href },
-    // { text: 'Dribble', src: 'https://dribbble.com/lelinguine/about', img: new URL('./../assets/externals/dribble.png', import.meta.url).href },
-    { text: 'Figma', src: 'https://www.figma.com/@lelinguine', img: new URL('./../assets/externals/figma.png', import.meta.url).href },
-    { text: 'Github', src: 'https://github.com/lelinguine', img: new URL('./../assets/externals/github.png', import.meta.url).href }
-  ];
+const links = [
+  // { text: 'Behance', src: 'https://www.behance.net/valentiluginb', img: new URL('./../assets/externals/behance.png', import.meta.url).href },
+  {
+    text: "Codepen",
+    src: "https://codepen.io/lelinguine",
+    img: new URL("./../assets/externals/codepen.png", import.meta.url).href,
+  },
+  // { text: 'Dribble', src: 'https://dribbble.com/lelinguine/about', img: new URL('./../assets/externals/dribble.png', import.meta.url).href },
+  {
+    text: "Figma",
+    src: "https://www.figma.com/@lelinguine",
+    img: new URL("./../assets/externals/figma.png", import.meta.url).href,
+  },
+  {
+    text: "Github",
+    src: "https://github.com/lelinguine",
+    img: new URL("./../assets/externals/github.png", import.meta.url).href,
+  },
+];
 </script>
 
 <template>
-    <div class="external-container">
-        <a v-for="(link, index) in links" :key="index" class="item external hover" :href="link.src" target="_blank">
-          <img :src="link.img" width="20">
-          <div class="disable">{{ link.text }}</div>
-        </a>
-    </div>
+  <div class="external-container">
+    <a
+      v-for="(link, index) in links"
+      :key="index"
+      class="item external hover"
+      :href="link.src"
+      target="_blank"
+    >
+      <img :src="link.img" width="20" />
+      <div class="disable">{{ link.text }}</div>
+    </a>
+  </div>
 </template>
-  
-<style scoped>
-  .external-container {
-    display: flex;
-  }
 
-  .external {
-    display: flex;
-    align-items: center;
-    padding: 0 0.6rem;
+<style scoped>
+.external-container {
+  display: flex;
+}
+
+.external {
+  display: flex;
+  align-items: center;
+  padding: 0 0.6rem;
+}
+
+.external img {
+  margin-right: 0.7em;
+}
+
+.external:hover img {
+  filter: invert(100%);
+}
+
+@media screen and (orientation: portrait) {
+  .disable {
+    display: none;
   }
 
   .external img {
-    margin-right: 0.7em;
+    margin: 0 0.2rem;
   }
-
-  .external:hover img {
-    filter: invert(100%);
-  }
-
-  @media screen and (orientation: portrait) {
-    .disable {
-      display: none;
-    }
-
-    .external img {
-      margin: 0 0.2rem;
-    }
-  }
+}
 </style>
