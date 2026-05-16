@@ -10,7 +10,6 @@ const links = [
     src: 'https://codepen.io/lelinguine',
     img: new URL('./../assets/externals/codepen.png', import.meta.url).href,
   },
-  // { text: 'Dribble', src: 'https://dribbble.com/lelinguine/about', img: new URL('./../assets/externals/dribble.png', import.meta.url).href },
   {
     text: 'Figma',
     src: 'https://www.figma.com/@lelinguine',

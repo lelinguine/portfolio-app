@@ -13,13 +13,13 @@
 }
 
 @font-face {
-  font-family: 'Poppins-Bold';
-  src: url('./fonts/Poppins/Poppins-SemiBold.ttf') format('truetype');
+  font-family: 'Poppins-Medium';
+  src: url('./fonts/Poppins/Poppins-Medium.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'Poppins-Medium';
-  src: url('./fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+  font-family: 'Poppins-Bold';
+  src: url('./fonts/Poppins/Poppins-Bold.ttf') format('truetype');
 }
 
 body {
@@ -71,11 +71,15 @@ h1 {
 a,
 p {
   margin: 0;
-  font-family: 'Poppins-Bold', sans-serif;
+  font-family: 'Poppins-Medium', sans-serif;
   font-size: 0.8rem;
 }
 
 a {
   color: var(--black);
   text-decoration: none;
+}
+
+.bold {
+  font-family: 'Poppins-Bold', sans-serif;
 }

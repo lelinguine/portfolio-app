@@ -33,18 +33,18 @@ const icons = [
 <template>
   <div class="icons-container">
     <div
-      v-for="(icons, index) in icons"
+      v-for="(icon, index) in icons"
       :key="index"
       class="icons hover"
-      @click="openWindow(icons.id)"
-      :data-id="icons.id"
+      @click="openWindow(icon.id)"
+      :data-id="icon.id"
     >
       <img
-        :src="icons.src"
-        :alt="icons.text"
+        :src="icon.src"
+        :alt="icon.text"
         width="40"
       />
-      <p :class="{ select: icons.text === 'About' }">{{ icons.text }}</p>
+      <p :class="{ select: icon.text === 'About' }">{{ icon.text }}</p>
     </div>
   </div>
 </template>

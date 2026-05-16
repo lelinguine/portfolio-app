@@ -23,9 +23,6 @@ import Timer from './components/timer.vue'
       <Mouse />
     </main>
   </div>
-  <!-- <div class="soon">
-    <p>Coming soon!</p>
-  </div> -->
 </template>
 
 <style scoped>
@@ -64,23 +61,4 @@ header {
     align-items: center;
   }
 }
-
-/* .soon {
-    display: none;
-  }
-
-  @media screen and (max-width: 375px) {
-    .container {
-      display: none;
-    }
-
-    .soon {
-      display: flex;
-      height: 100vh;
-      align-items: center;
-      justify-content: center;
-      background-color: var(--white);
-      cursor: default;
-    }
-  } */
 </style>

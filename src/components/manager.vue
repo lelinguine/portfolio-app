@@ -42,17 +42,17 @@ const windows = [
 
 <template>
   <Window
-    v-for="(windows, index) in windows"
+    v-for="(window, index) in windows"
     :key="index"
-    :id="windows.id"
-    :header="windows.component"
-    :width="windows.width"
-    :height="windows.height"
-    :top="windows.top"
-    :left="windows.left"
+    :id="window.id"
+    :header="window.component"
+    :width="window.width"
+    :height="window.height"
+    :top="window.top"
+    :left="window.left"
   >
-    <About v-if="windows.component === 'About'" />
-    <Files v-else-if="windows.component === 'Files'" />
-    <More v-else-if="windows.component === 'More'" />
+    <About v-if="window.component === 'About'" />
+    <Files v-else-if="window.component === 'Files'" />
+    <More v-else-if="window.component === 'More'" />
   </Window>
 </template>

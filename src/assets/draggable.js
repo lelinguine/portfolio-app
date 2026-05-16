@@ -33,7 +33,6 @@ function initDraggable() {
           let newTop = dragEl.offsetTop + (e.clientY - startY)
           let newLeft = dragEl.offsetLeft + (e.clientX - startX)
 
-          // Limites pour ne pas sortir de l'écran
           newTop = Math.max(
             HEADER_HEIGHT,
             Math.min(newTop, window.innerHeight - dragEl.offsetHeight)
