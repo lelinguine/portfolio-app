@@ -27,8 +27,16 @@ window.onload = function () {
         startY = e.clientY
         document.onmousemove = function (e) {
           if (!dragEl) return
-          dragEl.style.top = dragEl.offsetTop + (e.clientY - startY) + 'px'
-          dragEl.style.left = dragEl.offsetLeft + (e.clientX - startX) + 'px'
+
+          let newTop = dragEl.offsetTop + (e.clientY - startY)
+          let newLeft = dragEl.offsetLeft + (e.clientX - startX)
+
+          // Limites pour ne pas sortir de l'écran
+          newTop = Math.max(38, Math.min(newTop, window.innerHeight - dragEl.offsetHeight))
+          newLeft = Math.max(0, Math.min(newLeft, window.innerWidth - dragEl.offsetWidth))
+
+          dragEl.style.top = newTop + 'px'
+          dragEl.style.left = newLeft + 'px'
           startX = e.clientX
           startY = e.clientY
         }

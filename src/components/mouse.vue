@@ -29,6 +29,10 @@ export default {
       cursor.style.display = 'block'
     })
     document.body.addEventListener('mouseleave', () => {
+      cursor.classList.remove('drag')
+      cursor.classList.remove('hand')
+      cursor.classList.remove('enter')
+
       cursor.style.display = 'none'
     })
 
@@ -48,6 +52,14 @@ export default {
         if (e.target.classList && e.target.classList.contains('hover')) {
           cursor.classList.remove('enter')
         }
+      },
+      true
+    )
+
+    document.addEventListener(
+      'mouseup',
+      (e) => {
+        cursor.classList.remove('drag')
       },
       true
     )
@@ -147,7 +159,7 @@ export default {
   background-image: url('../assets/mouse/drag.png');
 }
 .drag {
-  background-image: url('../assets/mouse/move.png');
+  background-image: url('../assets/mouse/move.png') !important;
 }
 
 click-spark {
