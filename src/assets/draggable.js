@@ -4,7 +4,7 @@ export function getNextZIndex() {
   return ++currentZIndex
 }
 
-window.onload = function () {
+function initDraggable() {
   const popups = document.getElementsByClassName('window')
   let dragEl = null,
     startX = 0,
@@ -14,18 +14,19 @@ window.onload = function () {
     const header = popup.querySelector('.header')
     const closeBtn = popup.querySelector('.close')
 
-    popup.onmousedown = function () {
+    popup.addEventListener('mousedown', function () {
       this.style.zIndex = getNextZIndex()
       document.querySelectorAll('.header').forEach((h) => h.classList.remove('select'))
       if (header) header.classList.add('select')
-    }
+    })
 
     if (header) {
-      header.onmousedown = function (e) {
+      header.addEventListener('mousedown', function (e) {
         dragEl = popup
         startX = e.clientX
         startY = e.clientY
-        document.onmousemove = function (e) {
+
+        const handleMouseMove = (e) => {
           if (!dragEl) return
 
           let newTop = dragEl.offsetTop + (e.clientY - startY)
@@ -40,25 +41,35 @@ window.onload = function () {
           startX = e.clientX
           startY = e.clientY
         }
-        document.onmouseup = function () {
+
+        const handleMouseUp = () => {
           dragEl = null
-          document.onmousemove = document.onmouseup = null
+          document.removeEventListener('mousemove', handleMouseMove)
+          document.removeEventListener('mouseup', handleMouseUp)
+          document.body.removeEventListener('mouseleave', handleMouseLeave)
         }
-        // Stop si la souris sort de la fenêtre
-        document.body.addEventListener('mouseleave', () => {
+
+        const handleMouseLeave = () => {
           dragEl = null
-          document.onmousemove = document.onmouseup = null
-        })
-      }
+          document.removeEventListener('mousemove', handleMouseMove)
+          document.removeEventListener('mouseup', handleMouseUp)
+        }
+
+        document.addEventListener('mousemove', handleMouseMove)
+        document.addEventListener('mouseup', handleMouseUp)
+        document.body.addEventListener('mouseleave', handleMouseLeave)
+      })
     }
 
     if (closeBtn) {
-      closeBtn.onmousedown = (e) => {
+      closeBtn.addEventListener('mousedown', (e) => {
         e.stopPropagation()
-      }
-      closeBtn.onclick = () => {
+      })
+      closeBtn.addEventListener('click', () => {
         popup.style.display = 'none'
-      }
+      })
     }
   }
 }
+
+window.addEventListener('load', initDraggable)

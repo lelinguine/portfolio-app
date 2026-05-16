@@ -1,4 +1,6 @@
-<script>
+<script setup>
+import { onMounted, onUnmounted } from 'vue'
+
 class ClickSpark extends HTMLElement {
   constructor() {
     super()
@@ -17,104 +19,134 @@ class ClickSpark extends HTMLElement {
 }
 customElements.define('click-spark', ClickSpark)
 
-export default {
-  mounted() {
-    const cursor = document.querySelector('.cursor')
-    if (!cursor) return
+let listeners = {}
 
-    // Cursor movement
-    window.addEventListener('mousemove', (e) => {
-      cursor.style.left = e.clientX + 'px'
-      cursor.style.top = e.clientY + 'px'
-      cursor.style.display = 'block'
-    })
-    document.body.addEventListener('mouseleave', () => {
-      cursor.classList.remove('drag')
-      cursor.classList.remove('hand')
-      cursor.classList.remove('enter')
+onMounted(() => {
+  const cursor = document.querySelector('.cursor')
+  if (!cursor) return
 
-      cursor.style.display = 'none'
-    })
+  // Cursor movement
+  listeners.mousemove = (e) => {
+    cursor.style.left = e.clientX + 'px'
+    cursor.style.top = e.clientY + 'px'
+    cursor.style.display = 'block'
+  }
+  window.addEventListener('mousemove', listeners.mousemove)
 
-    // Cursor style on hover (delegation pour éléments dynamiques)
-    document.addEventListener(
-      'mouseenter',
-      (e) => {
-        if (e.target.classList && e.target.classList.contains('hover')) {
-          cursor.classList.add('enter')
-        }
-      },
-      true
-    )
-    document.addEventListener(
-      'mouseleave',
-      (e) => {
-        if (e.target.classList && e.target.classList.contains('hover')) {
-          cursor.classList.remove('enter')
-        }
-      },
-      true
-    )
+  // Mouse leave
+  listeners.mouseleave = () => {
+    cursor.classList.remove('drag')
+    cursor.classList.remove('hand')
+    cursor.classList.remove('enter')
+    cursor.style.display = 'none'
+  }
+  document.body.addEventListener('mouseleave', listeners.mouseleave)
 
-    document.addEventListener(
-      'mouseup',
-      (e) => {
-        cursor.classList.remove('drag')
-      },
-      true
-    )
-
-    document.querySelectorAll('.header').forEach((header) => {
-      header.addEventListener('mouseenter', () => cursor.classList.add('hand'))
-      header.addEventListener('mousedown', () => cursor.classList.add('drag'))
-      header.addEventListener('mouseup', () => cursor.classList.remove('drag'))
-      header.addEventListener('mouseleave', () => cursor.classList.remove('hand'))
-    })
-
-    // Click spark and sound
-    const clickSound = document.querySelector('.click-sound')
-    const spark = document.querySelector('click-spark')
-    if (spark) {
-      window.addEventListener('mousedown', (e) => {
-        if (clickSound) {
-          clickSound.playbackRate = 1.25
-          clickSound.currentTime = clickSound.duration / 8
-          clickSound.volume = 0.25
-          clickSound.play().catch(() => {})
-        }
-        // Spark animation
-        const svg = spark.shadowRoot.querySelector('svg')
-        if (!svg) return
-        const sparks = [...svg.children]
-        const size = 30,
-          offset = size / 2 + 'px'
-        sparks.forEach((sparkEl, i) => {
-          let deg = i * (360 / sparks.length)
-          sparkEl.animate(
-            [
-              {
-                strokeDashoffset: size * 3,
-                transform: `rotate(${deg}deg) translateY(${offset})`,
-              },
-              {
-                strokeDashoffset: size,
-                transform: `rotate(${deg}deg) translateY(0)`,
-              },
-            ],
-            {
-              duration: 660,
-              easing: 'cubic-bezier(0.25, 1, 0.5, 1)',
-              fill: 'forwards',
-            }
-          )
-        })
-        // Spark position
-        svg.style.left = e.clientX - svg.clientWidth / 2 + 'px'
-        svg.style.top = e.clientY - svg.clientHeight / 2 + 'px'
-      })
+  // Hover elements (delegation)
+  listeners.hoverEnter = (e) => {
+    if (e.target.classList && e.target.classList.contains('hover')) {
+      cursor.classList.add('enter')
     }
-  },
-}
+  }
+  document.addEventListener('mouseenter', listeners.hoverEnter, true)
+
+  listeners.hoverLeave = (e) => {
+    if (e.target.classList && e.target.classList.contains('hover')) {
+      cursor.classList.remove('enter')
+    }
+  }
+  document.addEventListener('mouseleave', listeners.hoverLeave, true)
+
+  // Header drag (delegation)
+  listeners.headerUp = () => {
+    cursor.classList.remove('drag')
+  }
+  document.addEventListener('mouseup', listeners.headerUp, true)
+
+  document.querySelectorAll('.header').forEach((header) => {
+    const headerEnter = () => cursor.classList.add('hand')
+    const headerDown = () => cursor.classList.add('drag')
+    const headerUp = () => cursor.classList.remove('drag')
+    const headerLeave = () => cursor.classList.remove('hand')
+
+    header.addEventListener('mouseenter', headerEnter)
+    header.addEventListener('mousedown', headerDown)
+    header.addEventListener('mouseup', headerUp)
+    header.addEventListener('mouseleave', headerLeave)
+
+    // Store for cleanup
+    if (!listeners.headerListeners) listeners.headerListeners = []
+    listeners.headerListeners.push({ header, headerEnter, headerDown, headerUp, headerLeave })
+  })
+
+  // Click spark and sound
+  const clickSound = document.querySelector('.click-sound')
+  const spark = document.querySelector('click-spark')
+  if (spark) {
+    listeners.mousedown = (e) => {
+      if (clickSound) {
+        clickSound.playbackRate = 1.25
+        clickSound.currentTime = clickSound.duration / 8
+        clickSound.volume = 0.25
+        clickSound.play().catch(() => {})
+      }
+      // Spark animation
+      const svg = spark.shadowRoot.querySelector('svg')
+      if (!svg) return
+      const sparks = [...svg.children]
+      const size = 30,
+        offset = size / 2 + 'px'
+      sparks.forEach((sparkEl, i) => {
+        let deg = i * (360 / sparks.length)
+        sparkEl.animate(
+          [
+            {
+              strokeDashoffset: size * 3,
+              transform: `rotate(${deg}deg) translateY(${offset})`,
+            },
+            {
+              strokeDashoffset: size,
+              transform: `rotate(${deg}deg) translateY(0)`,
+            },
+          ],
+          {
+            duration: 660,
+            easing: 'cubic-bezier(0.25, 1, 0.5, 1)',
+            fill: 'forwards',
+          }
+        )
+      })
+      // Spark position
+      svg.style.left = e.clientX - svg.clientWidth / 2 + 'px'
+      svg.style.top = e.clientY - svg.clientHeight / 2 + 'px'
+    }
+    window.addEventListener('mousedown', listeners.mousedown)
+  }
+})
+
+onUnmounted(() => {
+  // Clean up all listeners
+  if (listeners.mousemove) window.removeEventListener('mousemove', listeners.mousemove)
+  if (listeners.mouseleave) document.body.removeEventListener('mouseleave', listeners.mouseleave)
+  if (listeners.hoverEnter) document.removeEventListener('mouseenter', listeners.hoverEnter, true)
+  if (listeners.hoverLeave) document.removeEventListener('mouseleave', listeners.hoverLeave, true)
+  if (listeners.headerUp) document.removeEventListener('mouseup', listeners.headerUp, true)
+  if (listeners.mousedown) window.removeEventListener('mousedown', listeners.mousedown)
+
+  // Clean up header listeners
+  if (listeners.headerListeners) {
+    listeners.headerListeners.forEach(
+      ({ header, headerEnter, headerDown, headerUp, headerLeave }) => {
+        header.removeEventListener('mouseenter', headerEnter)
+        header.removeEventListener('mousedown', headerDown)
+        header.removeEventListener('mouseup', headerUp)
+        header.removeEventListener('mouseleave', headerLeave)
+      }
+    )
+  }
+
+  listeners = {}
+})
 </script>
 
 <template>

@@ -20,12 +20,15 @@ const updateTime = () => {
   currentTime.value = `${dayName} ${day} ${monthName} ${hourStr}:${minutes}${ampm}`
 }
 
+let interval
+
 onMounted(() => {
   updateTime()
-  const interval = setInterval(updateTime, 1000)
-  onUnmounted(() => {
-    clearInterval(interval)
-  })
+  interval = setInterval(updateTime, 1000)
+})
+
+onUnmounted(() => {
+  clearInterval(interval)
 })
 </script>
 
