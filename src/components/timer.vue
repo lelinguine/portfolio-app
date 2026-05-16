@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted } from 'vue'
 
 const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
@@ -25,10 +25,6 @@ let interval
 onMounted(() => {
   updateTime()
   interval = setInterval(updateTime, 1000)
-})
-
-onUnmounted(() => {
-  clearInterval(interval)
 })
 </script>
 

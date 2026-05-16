@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, onUnmounted } from 'vue'
+import { onMounted } from 'vue'
 
 class ClickSpark extends HTMLElement {
   constructor() {
@@ -122,30 +122,6 @@ onMounted(() => {
     }
     window.addEventListener('mousedown', listeners.mousedown)
   }
-})
-
-onUnmounted(() => {
-  // Clean up all listeners
-  if (listeners.mousemove) window.removeEventListener('mousemove', listeners.mousemove)
-  if (listeners.mouseleave) document.body.removeEventListener('mouseleave', listeners.mouseleave)
-  if (listeners.hoverEnter) document.removeEventListener('mouseenter', listeners.hoverEnter, true)
-  if (listeners.hoverLeave) document.removeEventListener('mouseleave', listeners.hoverLeave, true)
-  if (listeners.headerUp) document.removeEventListener('mouseup', listeners.headerUp, true)
-  if (listeners.mousedown) window.removeEventListener('mousedown', listeners.mousedown)
-
-  // Clean up header listeners
-  if (listeners.headerListeners) {
-    listeners.headerListeners.forEach(
-      ({ header, headerEnter, headerDown, headerUp, headerLeave }) => {
-        header.removeEventListener('mouseenter', headerEnter)
-        header.removeEventListener('mousedown', headerDown)
-        header.removeEventListener('mouseup', headerUp)
-        header.removeEventListener('mouseleave', headerLeave)
-      }
-    )
-  }
-
-  listeners = {}
 })
 </script>
 
