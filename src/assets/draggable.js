@@ -1,5 +1,6 @@
-export let currentZIndex = 1
+const HEADER_HEIGHT = 38
 
+export let currentZIndex = 1
 export function getNextZIndex() {
   return ++currentZIndex
 }
@@ -33,7 +34,10 @@ function initDraggable() {
           let newLeft = dragEl.offsetLeft + (e.clientX - startX)
 
           // Limites pour ne pas sortir de l'écran
-          newTop = Math.max(38, Math.min(newTop, window.innerHeight - dragEl.offsetHeight))
+          newTop = Math.max(
+            HEADER_HEIGHT,
+            Math.min(newTop, window.innerHeight - dragEl.offsetHeight)
+          )
           newLeft = Math.max(0, Math.min(newLeft, window.innerWidth - dragEl.offsetWidth))
 
           dragEl.style.top = newTop + 'px'
