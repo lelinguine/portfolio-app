@@ -45,7 +45,12 @@ window.onload = function () {
     }
 
     if (closeBtn) {
-      closeBtn.onclick = () => (popup.style.display = 'none')
+      closeBtn.onmousedown = (e) => {
+        e.stopPropagation()
+      }
+      closeBtn.onclick = () => {
+        popup.style.display = 'none'
+      }
     }
   }
 }

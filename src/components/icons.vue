@@ -3,16 +3,30 @@ import { openWindow } from '../assets/window.js'
 
 const icons = [
   {
+    id: 'about',
     text: 'About',
-    src: new URL('./../assets/about.png', import.meta.url).href,
+    src: new URL('./../assets/icons/about.png', import.meta.url).href,
   },
-  // { text: 'Gallery', src: new URL('./../assets/more.png', import.meta.url).href },
   {
+    id: 'files',
     text: 'Files',
-    src: new URL('./../assets/files.png', import.meta.url).href,
+    src: new URL('./../assets/icons/files.png', import.meta.url).href,
   },
-  // { text: 'Contact', src: new URL('./../assets/more.png', import.meta.url).href },
-  { text: 'More', src: new URL('./../assets/more.png', import.meta.url).href },
+  {
+    id: 'gallery',
+    text: 'Gallery',
+    src: new URL('./../assets/icons/gallery.png', import.meta.url).href,
+  },
+  {
+    id: 'contact',
+    text: 'Contact',
+    src: new URL('./../assets/icons/contact.png', import.meta.url).href,
+  },
+  {
+    id: 'more',
+    text: 'More',
+    src: new URL('./../assets/icons/more.png', import.meta.url).href,
+  },
 ]
 </script>
 
@@ -22,14 +36,15 @@ const icons = [
       v-for="(icons, index) in icons"
       :key="index"
       class="icons hover"
-      @click="openWindow(index, 'icons', 'window')"
+      @click="openWindow(icons.id, 'icons', 'window')"
+      :data-id="icons.id"
     >
       <img
         :src="icons.src"
         :alt="icons.text"
         width="40"
       />
-      <p :class="{ select: icons.text === 'Files' }">{{ icons.text }}</p>
+      <p :class="{ select: icons.text === 'About' }">{{ icons.text }}</p>
     </div>
   </div>
 </template>

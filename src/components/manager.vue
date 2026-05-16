@@ -6,20 +6,31 @@ import Files from './files.vue'
 
 const windows = [
   {
+    id: 'about',
     component: 'About',
     top: '20%',
     left: '10%',
     width: '340px',
     height: 'fit-content',
   },
+  // {
+  //   id: 'files',
+  //   component: 'Files',
+  //   top: '30%',
+  //   left: '50%',
+  //   width: '540px',
+  //   height: '340px',
+  // },
+  // {
+  //   id: 'contact',
+  //   component: 'Contact',
+  //   top: '60%',
+  //   left: '20%',
+  //   width: '340px',
+  //   height: 'fit-content',
+  // },
   {
-    component: 'Files',
-    top: '30%',
-    left: '50%',
-    width: '540px',
-    height: '340px',
-  },
-  {
+    id: 'more',
     component: 'More',
     top: '60%',
     left: '20%',
@@ -33,6 +44,7 @@ const windows = [
   <Window
     v-for="(windows, index) in windows"
     :key="index"
+    :id="windows.id"
     :header="windows.component"
     :width="windows.width"
     :height="windows.height"

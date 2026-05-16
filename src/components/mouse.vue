@@ -51,8 +51,11 @@ export default {
       },
       true
     )
+
     document.querySelectorAll('.header').forEach((header) => {
       header.addEventListener('mouseenter', () => cursor.classList.add('hand'))
+      header.addEventListener('mousedown', () => cursor.classList.add('drag'))
+      header.addEventListener('mouseup', () => cursor.classList.remove('drag'))
       header.addEventListener('mouseleave', () => cursor.classList.remove('hand'))
     })
 
@@ -63,7 +66,7 @@ export default {
       window.addEventListener('mousedown', (e) => {
         if (clickSound) {
           clickSound.playbackRate = 1.25
-          clickSound.currentTime = 0
+          clickSound.currentTime = clickSound.duration / 8
           clickSound.volume = 0.25
           clickSound.play().catch(() => {})
         }
@@ -110,7 +113,7 @@ export default {
     preload="auto"
   >
     <source
-      src="../assets/mouse/sound.mp3"
+      src="../assets/mouse/click.mp3"
       type="audio/mpeg"
     />
   </audio>
@@ -121,10 +124,10 @@ export default {
   z-index: 9999999;
   position: fixed;
   pointer-events: none;
-  transform: translate(-50%, -50%);
-  width: 38px;
-  height: 38px;
-  background-image: url('../assets/mouse/pointor.png');
+  transform: translate(-30%, -10%);
+  width: 24px;
+  height: 24px;
+  background-image: url('../assets/mouse/mouse.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -138,11 +141,15 @@ export default {
 }
 
 .enter {
-  background-image: url('../assets/mouse/cursor.png') !important;
+  background-image: url('../assets/mouse/pointer.png') !important;
 }
 .hand {
-  background-image: url('../assets/mouse/hand.png');
+  background-image: url('../assets/mouse/drag.png');
 }
+.drag {
+  background-image: url('../assets/mouse/move.png');
+}
+
 click-spark {
   display: contents;
 }

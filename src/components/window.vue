@@ -1,5 +1,9 @@
 <script setup>
 const props = defineProps({
+  id: {
+    type: String,
+    required: true,
+  },
   header: {
     type: String,
     required: true,
@@ -31,6 +35,7 @@ const props = defineProps({
       top: props.top,
       left: props.left,
     }"
+    :data-id="props.id"
     :class="[
       'window draggable border shadow',
       { display: header === 'About', other: header !== 'About' },
