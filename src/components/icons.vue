@@ -36,7 +36,7 @@ const icons = [
       v-for="(icons, index) in icons"
       :key="index"
       class="icons hover"
-      @click="openWindow(icons.id, 'icons', 'window')"
+      @click="openWindow(icons.id)"
       :data-id="icons.id"
     >
       <img
