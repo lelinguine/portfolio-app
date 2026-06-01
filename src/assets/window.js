@@ -1,6 +1,6 @@
 import { getNextZIndex } from './draggable.js'
 
-export function openWindow(id, window) {
+export function openWindow(id) {
   const icons = document.querySelectorAll('.icons')
   icons.forEach((icon) => {
     icon.querySelector('p').classList.remove('select')

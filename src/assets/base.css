@@ -17,11 +17,6 @@
   src: url('./fonts/Poppins/Poppins-Medium.ttf') format('truetype');
 }
 
-@font-face {
-  font-family: 'Poppins-Bold';
-  src: url('./fonts/Poppins/Poppins-Bold.ttf') format('truetype');
-}
-
 body {
   margin: 0;
   background: var(--primary);
@@ -78,8 +73,4 @@ p {
 a {
   color: var(--black);
   text-decoration: none;
-}
-
-.bold {
-  font-family: 'Poppins-Bold', sans-serif;
 }

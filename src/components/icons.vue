@@ -16,11 +16,13 @@ const icons = [
     id: 'gallery',
     text: 'Gallery',
     src: new URL('./../assets/icons/gallery.png', import.meta.url).href,
+    href: 'https://argentic.valentinluginbuhl.fr/',
   },
   {
     id: 'contact',
     text: 'Contact',
     src: new URL('./../assets/icons/contact.png', import.meta.url).href,
+    href: 'mailto:lelinguine@icloud.com',
   },
   {
     id: 'more',
@@ -28,6 +30,15 @@ const icons = [
     src: new URL('./../assets/icons/more.png', import.meta.url).href,
   },
 ]
+
+const handleIconClick = (icon) => {
+  if (icon.href) {
+    window.open(icon.href, '_blank', 'noopener,noreferrer')
+    return
+  }
+
+  openWindow(icon.id)
+}
 </script>
 
 <template>
@@ -36,7 +47,7 @@ const icons = [
       v-for="(icon, index) in icons"
       :key="index"
       class="icons hover"
-      @click="openWindow(icon.id)"
+      @click="handleIconClick(icon)"
       :data-id="icon.id"
     >
       <img

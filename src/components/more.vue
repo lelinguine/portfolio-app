@@ -1,7 +1,7 @@
 <template>
   <div class="more-container">
     <div class="more">
-      <p class="title bold">What do you want to see?</p>
+      <p class="title">What do you want to see?</p>
       <p class="version">Version 2.2 - 2026</p>
     </div>
   </div>
