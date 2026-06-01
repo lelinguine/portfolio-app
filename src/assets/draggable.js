@@ -23,6 +23,9 @@ function initDraggable() {
 
     if (header) {
       header.addEventListener('mousedown', function (e) {
+        if (e.target && e.target.closest && e.target.closest('.close')) {
+          return
+        }
         dragEl = popup
         startX = e.clientX
         startY = e.clientY
@@ -65,9 +68,6 @@ function initDraggable() {
     }
 
     if (closeBtn) {
-      closeBtn.addEventListener('mousedown', (e) => {
-        e.stopPropagation()
-      })
       closeBtn.addEventListener('click', () => {
         popup.style.display = 'none'
       })

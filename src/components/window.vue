@@ -36,10 +36,7 @@ const props = defineProps({
       left: props.left,
     }"
     :data-id="props.id"
-    :class="[
-      'window draggable border shadow',
-      { display: header === 'About', other: header !== 'About' },
-    ]"
+    :class="['window draggable border', { display: header === 'About', other: header !== 'About' }]"
   >
     <div :class="['header header-border', { select: header === 'About' }]">
       <p>{{ header }}</p>

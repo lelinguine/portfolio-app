@@ -7,7 +7,7 @@
         alt="vector"
         width="90"
       />
-      <p class="title">Valentin LUGINBÜHL</p>
+      <p>Valentin LUGINBÜHL</p>
       <h1>DEVELOPER & DESIGNER</h1>
       <div class="student"><p>(Student)</p></div>
     </div>

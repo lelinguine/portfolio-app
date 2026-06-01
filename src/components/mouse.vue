@@ -64,10 +64,22 @@ onMounted(() => {
   document.addEventListener('mouseup', listeners.headerUp, true)
 
   document.querySelectorAll('.header').forEach((header) => {
-    const headerEnter = () => cursor.classList.add('hand')
-    const headerDown = () => cursor.classList.add('drag')
-    const headerUp = () => cursor.classList.remove('drag')
-    const headerLeave = () => cursor.classList.remove('hand')
+    const headerEnter = (e) => {
+      if (e.target && e.target.closest && e.target.closest('.close')) return
+      cursor.classList.add('hand')
+    }
+    const headerDown = (e) => {
+      if (e.target && e.target.closest && e.target.closest('.close')) return
+      cursor.classList.add('drag')
+    }
+    const headerUp = (e) => {
+      if (e.target && e.target.closest && e.target.closest('.close')) return
+      cursor.classList.remove('drag')
+    }
+    const headerLeave = (e) => {
+      if (e.target && e.target.closest && e.target.closest('.close')) return
+      cursor.classList.remove('hand')
+    }
 
     header.addEventListener('mouseenter', headerEnter)
     header.addEventListener('mousedown', headerDown)

@@ -32,24 +32,30 @@ const files = [
 <template>
   <div class="files-window">
     <div class="files-container">
-      <div class="categories">
-        <div class="data">
-          <p>Projects:</p>
-          <p>Created at:</p>
-        </div>
+      <div class="file hover">
+        <video
+          class="video-cover"
+          src="./../assets/videos/alone.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
+        <p>Alone in space</p>
+        <span class="date">09.2023</span>
       </div>
 
-      <div
-        v-for="(file, index) in files"
-        :key="index"
-        class="files hover"
-        @click="openFiles(index, 'files', file)"
-      >
-        <p>{{ file.number }}.</p>
-        <div class="data">
-          <p class="text">{{ file.text }}</p>
-          <p class="date">{{ file.date }}</p>
-        </div>
+      <div class="file hover">
+        <video
+          class="video-cover"
+          src="./../assets/videos/luigi.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
+        <p>Luigi bros.</p>
+        <span class="date">09.2023</span>
       </div>
     </div>
     <div class="infos-container"><p>No selected file.</p></div>
@@ -59,45 +65,53 @@ const files = [
 <style scoped>
 .files-window {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 2fr 1fr;
   height: calc(100% - 40px);
 }
 .infos-container {
-  border-left: solid 2px var(--black);
+  border-top: solid 2px var(--black);
   display: flex;
+  padding: var(--padding);
   align-items: center;
   justify-content: center;
 }
-@media screen and (orientation: portrait) {
-  .files-window {
-    grid-template-rows: 2fr 1fr;
-    grid-template-columns: unset;
-  }
-  .infos-container {
-    border-top: solid 2px var(--black);
-    border-left: unset;
-  }
-}
 .files-container {
   overflow-y: auto;
+  overflow-x: hidden;
+  padding: var(--padding);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, auto));
+  gap: 1rem;
+  align-content: start;
 }
-.files,
-.categories {
+
+.files-container {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.files-container::-webkit-scrollbar {
+  display: none;
+}
+
+.file {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  gap: 0.8rem;
-  padding: 0rem 0.8rem;
-  height: 40px;
-}
-.data {
-  display: flex;
-  justify-content: space-between;
+  gap: 0.2rem;
   width: 100%;
+  height: fit-content;
 }
-.files:hover p.text,
-.select {
+
+.file:hover p {
   background-color: var(--black);
   color: var(--white);
+}
+
+.video-cover {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  display: block;
 }
 </style>

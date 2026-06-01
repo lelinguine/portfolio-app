@@ -59,15 +59,17 @@ h1 {
   font-size: 1.2rem;
 }
 
-.title {
-  font-size: 1rem;
+.date {
+  margin-top: -0.2rem;
+  font-size: 0.8rem;
 }
 
 a,
-p {
+p,
+span {
   margin: 0;
   font-family: 'Poppins-Medium', sans-serif;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 a {
