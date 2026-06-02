@@ -13,16 +13,14 @@ import Detail from './detail.vue'
 <style scoped>
 .project-window {
   display: flex;
+  height: calc(100% - var(--window-header-height));
 }
 .project-container {
   overflow-y: auto;
   overflow-x: hidden;
   padding: var(--padding);
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, auto));
-  gap: 1rem;
-  height: calc(100% - var(--window-header-height));
   width: 100%;
+  height: calc(100% - var(--window-header-height));
 }
 
 .project-container {

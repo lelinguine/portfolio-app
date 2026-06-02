@@ -11,17 +11,15 @@ subscribe((value) => {
 
 <template>
   <div class="details">
-    <p>Current project: {{ currentProject }}</p>
+    <p>No content available.</p>
   </div>
 </template>
 
 <style scoped>
 .details {
   height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: yellow;
 }
 </style>
