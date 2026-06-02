@@ -5,6 +5,8 @@
 
   --padding: 20px;
   --gap: 20px;
+
+  --window-header-height: 40px;
 }
 
 @font-face {

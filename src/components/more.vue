@@ -10,7 +10,7 @@
 <style scoped>
 .more-container {
   width: 100%;
-  height: calc(100% - 40px);
+  height: calc(100% - var(--window-header-height));
   display: flex;
   justify-content: center;
   align-items: center;

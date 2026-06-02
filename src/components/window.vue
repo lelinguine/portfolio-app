@@ -56,8 +56,8 @@ const props = defineProps({
 @media screen and (orientation: portrait) {
   .window {
     width: 100% !important;
-    height: calc(100% - 40px) !important;
-    top: 40px !important;
+    height: calc(100% - var(--window-header-height)) !important;
+    top: var(--window-header-height) !important;
     left: 0 !important;
     border: unset !important;
   }

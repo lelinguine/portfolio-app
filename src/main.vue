@@ -1,6 +1,6 @@
 <script setup>
-import Externals from './components/externals.vue'
-import Icons from './components/icons.vue'
+import Externals from './components/external.vue'
+import Icons from './components/icon.vue'
 import Manager from './components/manager.vue'
 import Mouse from './components/mouse.vue'
 import Timer from './components/timer.vue'
