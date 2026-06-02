@@ -12,7 +12,13 @@ const windows = [
     width: "340px",
     height: "180px",
   },
-  // { component: 'Files', top: '30%', left: '50%', width: '540px', height: '340px' },
+  // {
+  //   component: "Files",
+  //   top: "30%",
+  //   left: "50%",
+  //   width: "540px",
+  //   height: "340px",
+  // },
   {
     component: "More",
     top: "60%",
@@ -34,7 +40,7 @@ const windows = [
     :left="windows.left"
   >
     <About v-if="windows.component === 'About'" />
-    <!-- <Files v-else-if="windows.component === 'Files'" /> -->
+    <Files v-else-if="windows.component === 'Files'" />
     <More v-else-if="windows.component === 'More'" />
   </Window>
 </template>

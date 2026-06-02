@@ -18,6 +18,7 @@ import Timer from "./components/timer.vue";
       </div>
     </header>
     <main>
+      <!-- <Icons /> -->
       <Manager />
       <Mouse />
       <div class="soon">
