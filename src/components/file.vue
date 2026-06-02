@@ -1,5 +1,6 @@
 <script setup>
-import { openFileWindow } from '../assets/open.js'
+import { openFileWindow } from '../assets/window.js'
+import { setProject } from '../store.js'
 
 const files = [
   {
@@ -17,6 +18,7 @@ const files = [
 ]
 
 const handleIconClick = (file) => {
+  setProject(file.id)
   openFileWindow(file.id)
 }
 </script>

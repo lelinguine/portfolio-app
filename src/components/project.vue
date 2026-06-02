@@ -1,18 +1,20 @@
-<script setup></script>
+<script setup>
+import Detail from './detail.vue'
+</script>
 
 <template>
-  <div class="projects-window">
-    <div class="projects-container">
-      <p>Content</p>
+  <div class="project-window">
+    <div class="project-container">
+      <Detail />
     </div>
   </div>
 </template>
 
 <style scoped>
-.projects-window {
+.project-window {
   display: flex;
 }
-.projects-container {
+.project-container {
   overflow-y: auto;
   overflow-x: hidden;
   padding: var(--padding);
@@ -23,12 +25,12 @@
   width: 100%;
 }
 
-.projects-container {
+.project-container {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
 
-.projects-container::-webkit-scrollbar {
+.project-container::-webkit-scrollbar {
   display: none;
 }
 </style>
