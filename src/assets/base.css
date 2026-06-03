@@ -19,7 +19,9 @@
   src: url('./fonts/Poppins/Poppins-Medium.ttf') format('truetype');
 }
 
-body {
+body,
+.container,
+#main {
   margin: 0;
   background: var(--primary);
   background-image: url('./richter_zari.jpg');

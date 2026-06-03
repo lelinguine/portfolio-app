@@ -1,31 +1,31 @@
 <script setup>
-import Detail from './detail.vue'
+import { ref } from 'vue'
+import { subscribe } from '../store.js'
+
+const currentProject = ref(null)
+
+subscribe((value) => {
+  currentProject.value = value
+})
 </script>
 
 <template>
-  <div class="project-window">
-    <div class="project-container">
-      <Detail />
-    </div>
+  <div class="project-container">
+    <p>No content available.</p>
   </div>
 </template>
 
 <style scoped>
-.project-window {
-  display: flex;
-  height: calc(100% - var(--window-header-height));
-}
-.project-container {
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding: var(--padding);
-  width: 100%;
-  height: calc(100% - var(--window-header-height));
-}
-
 .project-container {
   scrollbar-width: none;
   -ms-overflow-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding);
+  height: calc(100% - 2 * var(--window-header-height));
+  width: calc(100% - var(--window-header-height));
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .project-container::-webkit-scrollbar {
