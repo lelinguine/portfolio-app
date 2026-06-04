@@ -1,13 +1,11 @@
-let project = null
-const listeners = new Set()
+import { shallowRef } from 'vue'
 
-export function setProject(v) {
-  project = v
-  listeners.forEach((fn) => fn(project))
+const initialProject = {
+  id: '',
+  title: '',
+  component: null,
+  date: '',
+  video: '',
 }
 
-export function subscribe(fn) {
-  listeners.add(fn)
-  fn(project)
-  return () => listeners.delete(fn)
-}
+export const currentProject = shallowRef(initialProject)

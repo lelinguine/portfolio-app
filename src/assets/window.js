@@ -20,7 +20,7 @@ export function openWindow(id) {
   targetWindow.querySelector('.header').classList.add('select')
 }
 
-export function openFileWindow(id) {
+export function openProjectWindow(id) {
   const files = document.querySelectorAll('.file')
   files.forEach((file) => {
     file.querySelector('p').classList.remove('select')

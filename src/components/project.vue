@@ -1,17 +1,15 @@
 <script setup>
 import { ref } from 'vue'
-import { subscribe } from '../store.js'
-
-const currentProject = ref(null)
-
-subscribe((value) => {
-  currentProject.value = value
-})
+import { currentProject } from '../store.js'
 </script>
 
 <template>
   <div class="project-container">
-    <p>No content available.</p>
+    <component
+      v-if="currentProject.component"
+      :is="currentProject.component"
+    />
+    <p v-else>No content available.</p>
   </div>
 </template>
 

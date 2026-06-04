@@ -1,16 +1,21 @@
 <script setup>
-import { openFileWindow } from '../assets/window.js'
-import { setProject } from '../store.js'
+import { openProjectWindow } from '../assets/window.js'
+import { currentProject } from '../store.js'
+
+import AloneDetails from './details/alone.vue'
+import LuigiDetails from './details/luigi.vue'
 
 const files = [
   {
     id: 'alone',
+    component: AloneDetails,
     title: 'Alone in space',
     date: '09.2023',
     video: new URL('./../assets/videos/alone.mp4', import.meta.url).href,
   },
   {
     id: 'luigi',
+    component: LuigiDetails,
     title: 'Luigi bros.',
     date: '09.2023',
     video: new URL('./../assets/videos/luigi.mp4', import.meta.url).href,
@@ -18,8 +23,8 @@ const files = [
 ]
 
 const handleIconClick = (file) => {
-  setProject(file.id)
-  openFileWindow(file.id)
+  currentProject.value = file
+  openProjectWindow(file.id)
 }
 </script>
 
