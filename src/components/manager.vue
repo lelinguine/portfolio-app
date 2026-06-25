@@ -1,9 +1,10 @@
 <script setup>
 import Window from './window.vue'
-import About from './about.vue'
-import More from './more.vue'
-import Files from './file.vue'
-import Project from './project.vue'
+
+import About from '../views/about.vue'
+import More from '../views/more.vue'
+import Files from '../views/file.vue'
+import Project from '../views/project.vue'
 
 const windows = [
   {
