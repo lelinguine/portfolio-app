@@ -3,9 +3,50 @@ import { openProjectWindow } from '../assets/window.js'
 import { currentProject } from '../store.js'
 
 import AloneDetails from './details/alone.vue'
+import ArgenticDetails from './details/argentic.vue'
+import MinesweeperDetails from './details/minesweeper.vue'
+import OthelloDetails from './details/othello.vue'
+import PortfolioDetails from './details/portfolio.vue'
+import SitomniaDetails from './details/sitomnia.vue'
 import LuigiDetails from './details/luigi.vue'
+import SupervisionDetails from './details/supervision.vue'
 
 const files = [
+  {
+    id: 'portfolio',
+    component: PortfolioDetails,
+    title: 'Portfolio',
+    date: '06.2026',
+    video: new URL('./../assets/videos/', import.meta.url).href,
+  },
+  {
+    id: 'argentic',
+    component: ArgenticDetails,
+    title: 'Argentic',
+    date: '11.2025',
+    video: new URL('./../assets/videos/', import.meta.url).href,
+  },
+  {
+    id: 'sitomnia',
+    component: SitomniaDetails,
+    title: 'Sitomnia',
+    date: '06.2025',
+    video: new URL('./../assets/videos/', import.meta.url).href,
+  },
+  {
+    id: 'othello',
+    component: OthelloDetails,
+    title: 'Othello',
+    date: '02.2025',
+    video: new URL('./../assets/videos/', import.meta.url).href,
+  },
+  {
+    id: 'minesweeper',
+    component: MinesweeperDetails,
+    title: 'Minesweeper',
+    date: '04.2024',
+    video: new URL('./../assets/videos/', import.meta.url).href,
+  },
   {
     id: 'alone',
     component: AloneDetails,
@@ -17,8 +58,15 @@ const files = [
     id: 'luigi',
     component: LuigiDetails,
     title: 'Luigi bros.',
-    date: '09.2023',
+    date: '06.2023',
     video: new URL('./../assets/videos/luigi.mp4', import.meta.url).href,
+  },
+  {
+    id: 'supervision',
+    component: SupervisionDetails,
+    title: 'Supervision',
+    date: '06.2022',
+    video: new URL('./../assets/videos/', import.meta.url).href,
   },
 ]
 
