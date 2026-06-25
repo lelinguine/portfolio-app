@@ -3,7 +3,6 @@ import { openProjectWindow } from '../assets/window.js'
 import { currentProject } from '../store.js'
 
 import AloneDetails from './details/alone.vue'
-import ArgenticDetails from './details/argentic.vue'
 import MinesweeperDetails from './details/minesweeper.vue'
 import OthelloDetails from './details/othello.vue'
 import PortfolioDetails from './details/portfolio.vue'
@@ -12,13 +11,6 @@ import LuigiDetails from './details/luigi.vue'
 import SupervisionDetails from './details/supervision.vue'
 
 const files = [
-  {
-    id: 'argentic',
-    component: ArgenticDetails,
-    title: 'Argentic',
-    date: '11.2025',
-    video: new URL('./../assets/videos/argentic.mp4', import.meta.url).href,
-  },
   {
     id: 'sitomnia',
     component: SitomniaDetails,
