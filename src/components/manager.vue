@@ -26,7 +26,7 @@ const windows = [
   {
     id: 'project',
     component: 'Project',
-    top: '40%',
+    top: '10%',
     left: '40%',
     width: '340px',
     height: '540px',
