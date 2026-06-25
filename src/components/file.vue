@@ -13,39 +13,32 @@ import SupervisionDetails from './details/supervision.vue'
 
 const files = [
   {
-    id: 'portfolio',
-    component: PortfolioDetails,
-    title: 'Portfolio',
-    date: '06.2026',
-    video: new URL('./../assets/videos/', import.meta.url).href,
-  },
-  {
     id: 'argentic',
     component: ArgenticDetails,
     title: 'Argentic',
     date: '11.2025',
-    video: new URL('./../assets/videos/', import.meta.url).href,
+    video: new URL('./../assets/videos/argentic.mp4', import.meta.url).href,
   },
   {
     id: 'sitomnia',
     component: SitomniaDetails,
     title: 'Sitomnia',
     date: '06.2025',
-    video: new URL('./../assets/videos/', import.meta.url).href,
+    video: new URL('./../assets/videos/sitomnia.mp4', import.meta.url).href,
   },
   {
     id: 'othello',
     component: OthelloDetails,
     title: 'Othello',
     date: '02.2025',
-    video: new URL('./../assets/videos/', import.meta.url).href,
+    video: new URL('./../assets/videos/othello.mp4', import.meta.url).href,
   },
   {
     id: 'minesweeper',
     component: MinesweeperDetails,
     title: 'Minesweeper',
     date: '04.2024',
-    video: new URL('./../assets/videos/', import.meta.url).href,
+    video: new URL('./../assets/videos/minesweeper.mp4', import.meta.url).href,
   },
   {
     id: 'alone',
@@ -66,7 +59,7 @@ const files = [
     component: SupervisionDetails,
     title: 'Supervision',
     date: '06.2022',
-    video: new URL('./../assets/videos/', import.meta.url).href,
+    video: new URL('./../assets/videos/supervision.mp4', import.meta.url).href,
   },
 ]
 
