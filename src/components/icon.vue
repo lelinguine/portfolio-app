@@ -66,7 +66,7 @@ const handleIconClick = (icon) => {
   flex-direction: column;
   align-items: center;
   width: fit-content;
-  margin: 1.2rem 1rem;
+  margin: 1.2rem 0.5rem;
   gap: 1rem;
 }
 

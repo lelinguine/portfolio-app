@@ -5,7 +5,10 @@ import { currentProject } from '../store.js'
 
 <template>
   <div class="project-container">
-    <h1>{{ currentProject.title }}</h1>
+    <div class="project-header">
+      <h1>{{ currentProject.title }}</h1>
+      <span class="date">{{ currentProject.date }}</span>
+    </div>
     <video
       class="video-cover"
       :src="currentProject.video"
@@ -40,5 +43,14 @@ import { currentProject } from '../store.js'
 
 .project-container::-webkit-scrollbar {
   display: none;
+}
+
+.project-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  width: 100%;
+  height: fit-content;
 }
 </style>
