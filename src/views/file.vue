@@ -22,12 +22,6 @@ const files = [
     video: new URL('./../assets/videos/minesweeper.mp4', import.meta.url).href,
   },
   {
-    id: 'alone',
-    title: 'Alone in space',
-    date: '09.2023',
-    video: new URL('./../assets/videos/alone.mp4', import.meta.url).href,
-  },
-  {
     id: 'luigi',
     title: 'Luigi bros.',
     date: '06.2023',

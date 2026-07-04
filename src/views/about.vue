@@ -9,7 +9,6 @@
       />
       <p>Valentin LUGINBÜHL</p>
       <h1>DEVELOPER & DESIGNER</h1>
-      <div class="student"><p>(Student)</p></div>
     </div>
     <div class="about-description">
       <p>
@@ -44,12 +43,6 @@
   top: 0;
   left: 0;
   margin: -2px -12px;
-}
-
-.student {
-  display: flex;
-  justify-content: end;
-  margin-top: -0.2rem;
 }
 
 .about-description {
