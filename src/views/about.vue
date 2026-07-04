@@ -32,6 +32,9 @@
   align-items: center;
   padding: var(--padding);
   gap: var(--gap);
+  background-color: var(--white);
+  position: relative;
+  z-index: 1;
 }
 
 .about {

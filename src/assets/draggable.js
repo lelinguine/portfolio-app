@@ -1,6 +1,7 @@
 const HEADER_HEIGHT = 38
 
 export let currentZIndex = 1
+
 export function getNextZIndex() {
   return ++currentZIndex
 }

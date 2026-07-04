@@ -39,6 +39,9 @@ import { currentProject } from '../store.js'
   width: calc(100% - var(--window-header-height));
   overflow-y: auto;
   overflow-x: hidden;
+  background-color: var(--white);
+  position: relative;
+  z-index: 1;
 }
 
 .project-container::-webkit-scrollbar {

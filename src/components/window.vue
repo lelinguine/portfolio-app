@@ -40,6 +40,7 @@ const props = defineProps({
   >
     <div :class="['header header-border', { select: header === 'About' }]">
       <p>{{ header }}</p>
+
       <div class="close hover">
         <img
           src="../assets/cross.svg"
@@ -62,8 +63,10 @@ const props = defineProps({
     border: unset !important;
   }
 }
+
 .draggable {
   position: absolute;
+  z-index: 1;
   background-color: var(--white);
   display: none;
 }
@@ -76,7 +79,7 @@ const props = defineProps({
 }
 
 .header {
-  width: 100%;
+  width: calc(100% - 2 * 0 0.4rem);
   height: 38px;
   background-color: var(--white);
   color: var(--black);
@@ -84,11 +87,16 @@ const props = defineProps({
   justify-content: center;
   align-items: center;
   position: relative;
+  z-index: 1;
+  padding: 0 0.4rem;
+  gap: 0.4rem;
 }
+
 .select {
   filter: invert(100%);
   border-bottom: solid 2px var(--white);
 }
+
 .close {
   position: absolute;
   right: 0.4rem;
@@ -97,5 +105,6 @@ const props = defineProps({
   justify-content: center;
   align-items: center;
   padding: 0 0.4rem 0;
+  background-color: var(--white);
 }
 </style>

@@ -14,5 +14,8 @@
   padding: var(--padding);
   height: calc(100% - var(--window-header-height));
   width: calc(100% - var(--window-header-height));
+  background-color: var(--white);
+  position: relative;
+  z-index: 1;
 }
 </style>

@@ -77,6 +77,9 @@ const handleIconClick = (file) => {
   width: calc(100% - var(--window-header-height));
   overflow-y: auto;
   overflow-x: hidden;
+  background-color: var(--white);
+  position: relative;
+  z-index: 1;
 }
 
 .files-container::-webkit-scrollbar {
@@ -87,9 +90,12 @@ const handleIconClick = (file) => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.2rem;
   width: 100%;
   height: fit-content;
+}
+
+.file p {
+  margin-top: 0.2rem;
 }
 
 .file:hover p,
