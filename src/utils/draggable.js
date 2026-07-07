@@ -1,11 +1,15 @@
+// Minimum top position
 const HEADER_HEIGHT = 38
 
+// Current highest z-index
 export let currentZIndex = 1
 
+// Bring window to front
 export function getNextZIndex() {
   return ++currentZIndex
 }
 
+// Initialize draggable windows
 function initDraggable() {
   const popups = document.getElementsByClassName('window')
   let dragEl = null,
@@ -16,6 +20,7 @@ function initDraggable() {
     const header = popup.querySelector('.header')
     const closeBtn = popup.querySelector('.close')
 
+    // Focus selected window
     popup.addEventListener('mousedown', function () {
       this.style.zIndex = getNextZIndex()
       document.querySelectorAll('.header').forEach((h) => h.classList.remove('select'))
@@ -24,19 +29,23 @@ function initDraggable() {
 
     if (header) {
       header.addEventListener('mousedown', function (e) {
+        // Ignore close button
         if (e.target && e.target.closest && e.target.closest('.close')) {
           return
         }
+
         dragEl = popup
         startX = e.clientX
         startY = e.clientY
 
+        // Move window
         const handleMouseMove = (e) => {
           if (!dragEl) return
 
           let newTop = dragEl.offsetTop + (e.clientY - startY)
           let newLeft = dragEl.offsetLeft + (e.clientX - startX)
 
+          // Keep inside viewport
           newTop = Math.max(
             HEADER_HEIGHT,
             Math.min(newTop, window.innerHeight - dragEl.offsetHeight)
@@ -45,10 +54,12 @@ function initDraggable() {
 
           dragEl.style.top = newTop + 'px'
           dragEl.style.left = newLeft + 'px'
+
           startX = e.clientX
           startY = e.clientY
         }
 
+        // Stop dragging
         const handleMouseUp = () => {
           dragEl = null
           document.removeEventListener('mousemove', handleMouseMove)
@@ -68,6 +79,7 @@ function initDraggable() {
       })
     }
 
+    // Close window
     if (closeBtn) {
       closeBtn.addEventListener('click', () => {
         popup.style.display = 'none'
@@ -76,4 +88,5 @@ function initDraggable() {
   }
 }
 
+// Start on page load
 window.addEventListener('load', initDraggable)
