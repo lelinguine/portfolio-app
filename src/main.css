@@ -57,6 +57,10 @@ body,
   }
 }
 
+main {
+  height: calc(100vh - 2 * var(--window-header-height));
+}
+
 h1 {
   margin: 0;
   font-family: 'Poly-Regular', sans-serif;

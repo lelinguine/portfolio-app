@@ -13,6 +13,15 @@ const files = [
     link: 'https://sitomnia.valentinluginbuhl.fr',
   },
   {
+    id: 'bernalis',
+    title: 'Bernalis',
+    date: '05.2025',
+    video: new URL('./../assets/videos/bernalis.mp4', import.meta.url).href,
+    description:
+      "Bernalis is a innovative puzzle game that challenges players to solve complex riddles and navigate through intricate mazes. The game combines elements of strategy and logic to create an engaging experience that tests the player's problem-solving skills.",
+    link: 'https://www.figma.com/proto/uAJFoIITJLfz5WiYJgg5tr/Bernalis?node-id=64-131&p=f&t=3ckZYj7hMAar5GvT-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A16',
+  },
+  {
     id: 'othello',
     title: 'Othello',
     date: '02.2025',
@@ -22,21 +31,21 @@ const files = [
     link: 'https://othello.valentinluginbuhl.fr',
   },
   {
-    id: 'minesweeper',
-    title: 'Minesweeper',
-    date: '04.2024',
-    video: new URL('./../assets/videos/minesweeper.mp4', import.meta.url).href,
-    description:
-      'Minesweeper is a classic puzzle game where players must clear a grid of hidden mines without detonating any of them. The game provides numerical clues to help players deduce the locations of the mines. It requires logical thinking and careful planning to successfully navigate the grid.',
-    link: 'https://minesweeper.valentinluginbuhl.fr',
-  },
-  {
     id: 'luigi',
     title: 'Luigi Bros',
     date: '06.2023',
     video: new URL('./../assets/videos/luigi.mp4', import.meta.url).href,
     description:
       'Luigi Bros is a side-scrolling platformer game where players control Luigi as he navigates through various levels, collecting coins and avoiding enemies. The game features vibrant graphics and engaging gameplay that captures the essence of the classic Mario franchise.',
+    link: '',
+  },
+  {
+    id: 'brainine',
+    title: 'Brainine',
+    date: '10.2022',
+    video: new URL('./../assets/videos/brainine.mp4', import.meta.url).href,
+    description:
+      'Brainine is a challenging puzzle game that pushes players to think critically and solve complex problems. The game features a variety of brain-teasing levels that require strategic thinking and creativity to overcome.',
     link: '',
   },
   {
@@ -65,14 +74,14 @@ const handleIconClick = (file) => {
       @click="handleIconClick(file)"
       :data-id="file.id"
     >
-      <video
+      <!-- <video
         class="video-cover"
         :src="file.video"
         autoplay
         muted
         loop
         playsinline
-      ></video>
+      ></video> -->
       <p>{{ file.title }}</p>
       <span class="date">{{ file.date }}</span>
     </div>

@@ -1,11 +1,6 @@
 <script setup>
 const links = [
   {
-    text: 'Behance',
-    src: 'https://www.behance.net/valentiluginb',
-    img: new URL('./../assets/externals/behance.png', import.meta.url).href,
-  },
-  {
     text: 'Codepen',
     src: 'https://codepen.io/lelinguine',
     img: new URL('./../assets/externals/codepen.png', import.meta.url).href,
@@ -28,7 +23,7 @@ const links = [
     <a
       v-for="(link, index) in links"
       :key="index"
-      class="item external hover"
+      class="external hover"
       :href="link.src"
       target="_blank"
     >
@@ -50,6 +45,11 @@ const links = [
   display: flex;
   align-items: center;
   padding: 0 0.6rem;
+}
+
+.external:hover {
+  background-color: var(--black);
+  color: var(--white);
 }
 
 .external img {

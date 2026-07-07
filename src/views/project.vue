@@ -10,7 +10,7 @@ import Link from '../components/link.vue'
       <h1>{{ currentProject.title }}</h1>
       <span class="date">{{ currentProject.date }}</span>
     </div>
-    <video
+    <!-- <video
       v-if="currentProject.video"
       class="video-cover"
       :src="currentProject.video"
@@ -18,7 +18,7 @@ import Link from '../components/link.vue'
       muted
       loop
       playsinline
-    ></video>
+    ></video> -->
     <p>
       {{ currentProject.description }}
     </p>

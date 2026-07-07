@@ -53,7 +53,7 @@ const handleIconClick = (icon) => {
       <img
         :src="icon.src"
         :alt="icon.text"
-        width="40"
+        width="32"
       />
       <p :class="{ select: icon.text === 'About' }">{{ icon.text }}</p>
     </div>
@@ -68,12 +68,17 @@ const handleIconClick = (icon) => {
   width: fit-content;
   margin: 1.2rem 0.5rem;
   gap: 1rem;
+  height: 100%;
 }
 
 .icons {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.icons:last-child {
+  margin-top: auto;
 }
 
 .icons p {
