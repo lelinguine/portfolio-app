@@ -1,4 +1,6 @@
 <script setup>
+import '../utils/draggable.js'
+
 import Window from './window.vue'
 
 import About from '../views/about.vue'

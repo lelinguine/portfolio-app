@@ -41,6 +41,10 @@ header {
   z-index: 999999;
 }
 
+.header-border {
+  border-bottom: solid 2px var(--black);
+}
+
 .timer-container {
   display: flex;
   align-items: center;

@@ -1,14 +1,82 @@
-@import './base.css';
+:root {
+  --primary: #708090;
+  --black: #000000;
+  --white: #ffffff;
 
-.header-border {
-  border-bottom: solid 2px var(--black);
+  --padding: 20px;
+  --gap: 20px;
+
+  --window-header-height: 40px;
 }
 
-.border {
-  border: solid 2px var(--black);
+@font-face {
+  font-family: 'Poly-Regular';
+  src: url('./assets/fonts/Poly/Poly-Regular.ttf') format('truetype');
 }
 
-.item:hover {
-  background-color: var(--black);
-  color: var(--white);
+@font-face {
+  font-family: 'Poppins-Medium';
+  src: url('./assets/fonts/Poppins/Poppins-Medium.ttf') format('truetype');
+}
+
+body,
+.container,
+#main {
+  margin: 0;
+  background: var(--primary);
+  background-image: url('./assets/richter_zari.jpg');
+  background-size: cover;
+  background-position: center;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  overflow: hidden;
+}
+
+@media screen and (orientation: landscape) {
+  body,
+  body * {
+    cursor: none;
+  }
+}
+
+h1 {
+  margin: 0;
+  font-family: 'Poly-Regular', sans-serif;
+  font-size: 1.2rem;
+}
+
+.date {
+  margin-top: -0.2rem;
+  font-size: 0.8rem;
+}
+
+a,
+p,
+span {
+  margin: 0;
+  font-family: 'Poppins-Medium', sans-serif;
+  font-size: 1rem;
+}
+
+a {
+  color: var(--black);
+  text-decoration: none;
 }

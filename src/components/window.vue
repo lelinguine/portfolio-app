@@ -40,7 +40,7 @@ const props = defineProps({
     :data-id="props.id"
     :class="['window draggable border', { display: header === 'About', other: header !== 'About' }]"
   >
-    <div :class="['header header-border', { select: header === 'About' }]">
+    <div :class="['header', { select: header === 'About' }]">
       <p>{{ header }}</p>
 
       <div class="close hover">
@@ -60,6 +60,10 @@ const props = defineProps({
     left: 0 !important;
     border: unset !important;
   }
+}
+
+.border {
+  border: solid 2px var(--black);
 }
 
 .draggable {
@@ -88,6 +92,7 @@ const props = defineProps({
   z-index: 1;
   padding: 0 0.4rem;
   gap: 0.4rem;
+  border-bottom: solid 2px var(--black);
 }
 
 .select {
