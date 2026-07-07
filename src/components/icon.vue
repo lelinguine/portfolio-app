@@ -1,5 +1,5 @@
 <script setup>
-import { openWindow } from '../assets/window.js'
+import { openWindow } from '../utils/window.js'
 
 const icons = [
   {

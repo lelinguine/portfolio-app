@@ -1,4 +1,6 @@
 <script setup>
+import XMark from './icons/x-mark.vue'
+
 const props = defineProps({
   id: {
     type: String,
@@ -42,11 +44,7 @@ const props = defineProps({
       <p>{{ header }}</p>
 
       <div class="close hover">
-        <img
-          src="../assets/cross.svg"
-          alt="close"
-          width="15"
-        />
+        <XMark />
       </div>
     </div>
     <slot></slot>

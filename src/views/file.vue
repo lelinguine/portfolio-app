@@ -1,6 +1,6 @@
 <script setup>
-import { openProjectWindow } from '../assets/window.js'
-import { currentProject } from '../store.js'
+import { openProjectWindow } from '../utils/window.js'
+import { currentProject } from '../utils/store.js'
 
 const files = [
   {
@@ -8,30 +8,36 @@ const files = [
     title: 'Sitomnia',
     date: '06.2025',
     video: new URL('./../assets/videos/sitomnia.mp4', import.meta.url).href,
+    description:
+      'Sitomnia is a game that explores the concept of sleep paralysis and the fear of being trapped in a dream. Players navigate through a series of surreal environments, solving puzzles and avoiding nightmarish creatures. The game aims to create an immersive experience that blurs the line between reality and dreams.',
+    link: 'https://sitomnia.valentinluginbuhl.fr',
   },
   {
     id: 'othello',
     title: 'Othello',
     date: '02.2025',
     video: new URL('./../assets/videos/othello.mp4', import.meta.url).href,
+    description:
+      "Othello is a classic board game that has been adapted into a digital format. Players take turns placing their pieces on the board, with the goal of capturing their opponent's pieces by sandwiching them between their own. The game requires strategic thinking and planning ahead to outmaneuver the opponent.",
+    link: 'https://othello.valentinluginbuhl.fr',
   },
   {
     id: 'minesweeper',
     title: 'Minesweeper',
     date: '04.2024',
     video: new URL('./../assets/videos/minesweeper.mp4', import.meta.url).href,
-  },
-  {
-    id: 'luigi',
-    title: 'Luigi bros.',
-    date: '06.2023',
-    video: new URL('./../assets/videos/luigi.mp4', import.meta.url).href,
+    description:
+      'Minesweeper is a classic puzzle game where players must clear a grid of hidden mines without detonating any of them. The game provides numerical clues to help players deduce the locations of the mines. It requires logical thinking and careful planning to successfully navigate the grid.',
+    link: 'https://minesweeper.valentinluginbuhl.fr',
   },
   {
     id: 'supervision',
     title: 'Supervision',
     date: '06.2022',
     video: new URL('./../assets/videos/supervision.mp4', import.meta.url).href,
+    description:
+      'Supervision is a futuristic action game that puts players in the role of a high-tech surveillance agent. Players must monitor and manage various security systems to prevent crimes and protect citizens. The game combines strategy, quick reflexes, and problem-solving skills to create an engaging experience.',
+    link: 'https://supervision.valentinluginbuhl.fr',
   },
 ]
 

@@ -1,5 +1,5 @@
 import './assets/main.css'
-import './assets/draggable.js'
+import './utils/draggable.js'
 
 import { createApp } from 'vue'
 import App from './main.vue'

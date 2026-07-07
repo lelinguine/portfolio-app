@@ -6,6 +6,8 @@ const initialProject = {
   component: null,
   date: '',
   video: '',
+  description: '',
+  link: '',
 }
 
 export const currentProject = shallowRef(initialProject)
