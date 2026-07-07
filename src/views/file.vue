@@ -1,5 +1,5 @@
 <script setup>
-import { openProjectWindow } from '../utils/window.js'
+import { openWindow } from '../utils/window.js'
 import { currentProject } from '../utils/store.js'
 
 const files = [
@@ -31,6 +31,15 @@ const files = [
     link: 'https://minesweeper.valentinluginbuhl.fr',
   },
   {
+    id: 'luigi',
+    title: 'Luigi Bros',
+    date: '06.2023',
+    video: new URL('./../assets/videos/luigi.mp4', import.meta.url).href,
+    description:
+      'Luigi Bros is a side-scrolling platformer game where players control Luigi as he navigates through various levels, collecting coins and avoiding enemies. The game features vibrant graphics and engaging gameplay that captures the essence of the classic Mario franchise.',
+    link: '',
+  },
+  {
     id: 'supervision',
     title: 'Supervision',
     date: '06.2022',
@@ -43,7 +52,7 @@ const files = [
 
 const handleIconClick = (file) => {
   currentProject.value = file
-  openProjectWindow(file.id)
+  openWindow(file.id, { itemSelector: '.file', windowId: 'project', skipIfOpen: true })
 }
 </script>
 

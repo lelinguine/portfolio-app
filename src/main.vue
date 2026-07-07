@@ -39,9 +39,6 @@ header {
   display: flex;
   justify-content: space-between;
   z-index: 999999;
-}
-
-.header-border {
   border-bottom: solid 2px var(--black);
 }
 
