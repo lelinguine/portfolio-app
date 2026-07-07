@@ -31,24 +31,6 @@ const files = [
     link: 'https://othello.valentinluginbuhl.fr',
   },
   {
-    id: 'luigi',
-    title: 'Luigi Bros',
-    date: '06.2023',
-    video: new URL('./../assets/videos/luigi.mp4', import.meta.url).href,
-    description:
-      'Luigi Bros is a side-scrolling platformer game where players control Luigi as he navigates through various levels, collecting coins and avoiding enemies. The game features vibrant graphics and engaging gameplay that captures the essence of the classic Mario franchise.',
-    link: '',
-  },
-  {
-    id: 'brainine',
-    title: 'Brainine',
-    date: '10.2022',
-    video: new URL('./../assets/videos/brainine.mp4', import.meta.url).href,
-    description:
-      'Brainine is a challenging puzzle game that pushes players to think critically and solve complex problems. The game features a variety of brain-teasing levels that require strategic thinking and creativity to overcome.',
-    link: '',
-  },
-  {
     id: 'supervision',
     title: 'Supervision',
     date: '06.2022',
@@ -81,7 +63,7 @@ const handleIconClick = (file) => {
         muted
         loop
         playsinline
-      ></video> -->
+      /> -->
       <p>{{ file.title }}</p>
       <span class="date">{{ file.date }}</span>
     </div>
