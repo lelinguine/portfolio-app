@@ -56,14 +56,14 @@ const handleIconClick = (file) => {
       @click="handleIconClick(file)"
       :data-id="file.id"
     >
-      <!-- <video
+      <video
         class="video-cover"
         :src="file.video"
         autoplay
         muted
         loop
         playsinline
-      /> -->
+      />
       <p>{{ file.title }}</p>
       <span class="date">{{ file.date }}</span>
     </div>
