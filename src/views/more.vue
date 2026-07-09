@@ -3,6 +3,11 @@
     <p class="title">What do you want to see?</p>
     <p class="version">Version 2.2-a - 2026</p>
   </div>
+
+  TODO
+  <a href="/privacy"> Politique de confidentialité </a>
+
+  <a href="/mentions-legales"> Mentions légales </a>car analytics vercel
 </template>
 
 <style scoped>
