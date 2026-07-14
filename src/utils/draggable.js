@@ -1,26 +1,25 @@
 // Minimum top position
 const HEADER_HEIGHT = 38
+const DRAG_DELAY = 100 // ms
 
 // Current highest z-index
 export let currentZIndex = 1
 
-// Bring window to front
 export function getNextZIndex() {
   return ++currentZIndex
 }
 
-// Initialize draggable windows
 function initDraggable() {
   const popups = document.getElementsByClassName('window')
-  let dragEl = null,
-    startX = 0,
-    startY = 0
+  let dragEl = null
+  let startX = 0
+  let startY = 0
+  let dragTimeout = null
 
   for (let popup of popups) {
     const header = popup.querySelector('.header')
     const closeBtn = popup.querySelector('.close')
 
-    // Focus selected window
     popup.addEventListener('mousedown', function () {
       this.style.zIndex = getNextZIndex()
       document.querySelectorAll('.header').forEach((h) => h.classList.remove('select'))
@@ -29,27 +28,31 @@ function initDraggable() {
 
     if (header) {
       header.addEventListener('mousedown', function (e) {
-        // Ignore close button
-        if (e.target && e.target.closest && e.target.closest('.close')) {
+        if (e.target?.closest?.('.close')) {
           return
         }
 
-        dragEl = popup
         startX = e.clientX
         startY = e.clientY
 
-        // Move window
+        // Attend avant d'activer le drag
+        dragTimeout = setTimeout(() => {
+          dragEl = popup
+          dragEl.classList.add('dragging')
+        }, DRAG_DELAY)
+
         const handleMouseMove = (e) => {
+          // Pas encore activé
           if (!dragEl) return
 
           let newTop = dragEl.offsetTop + (e.clientY - startY)
           let newLeft = dragEl.offsetLeft + (e.clientX - startX)
 
-          // Keep inside viewport
           newTop = Math.max(
             HEADER_HEIGHT,
             Math.min(newTop, window.innerHeight - dragEl.offsetHeight)
           )
+
           newLeft = Math.max(0, Math.min(newLeft, window.innerWidth - dragEl.offsetWidth))
 
           dragEl.style.top = newTop + 'px'
@@ -59,27 +62,26 @@ function initDraggable() {
           startY = e.clientY
         }
 
-        // Stop dragging
-        const handleMouseUp = () => {
-          dragEl = null
-          document.removeEventListener('mousemove', handleMouseMove)
-          document.removeEventListener('mouseup', handleMouseUp)
-          document.body.removeEventListener('mouseleave', handleMouseLeave)
-        }
+        const stopDragging = () => {
+          clearTimeout(dragTimeout)
 
-        const handleMouseLeave = () => {
+          if (dragEl) {
+            dragEl.classList.remove('dragging')
+          }
+
           dragEl = null
+
           document.removeEventListener('mousemove', handleMouseMove)
-          document.removeEventListener('mouseup', handleMouseUp)
+          document.removeEventListener('mouseup', stopDragging)
+          document.body.removeEventListener('mouseleave', stopDragging)
         }
 
         document.addEventListener('mousemove', handleMouseMove)
-        document.addEventListener('mouseup', handleMouseUp)
-        document.body.addEventListener('mouseleave', handleMouseLeave)
+        document.addEventListener('mouseup', stopDragging)
+        document.body.addEventListener('mouseleave', stopDragging)
       })
     }
 
-    // Close window
     if (closeBtn) {
       closeBtn.addEventListener('click', () => {
         popup.style.display = 'none'
@@ -88,5 +90,4 @@ function initDraggable() {
   }
 }
 
-// Start on page load
 window.addEventListener('load', initDraggable)

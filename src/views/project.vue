@@ -10,15 +10,13 @@ import Link from '../components/link.vue'
       <h1>{{ currentProject.title }}</h1>
       <span class="date">{{ currentProject.date }}</span>
     </div>
-    <video
-      v-if="currentProject.video"
-      class="video-cover"
-      :src="currentProject.video"
-      autoplay
-      muted
-      loop
-      playsinline
+    <img
+      v-if="currentProject.cover"
+      class="cover"
+      :src="currentProject.cover"
+      alt="Cover image of the project"
     />
+
     <Link
       v-if="currentProject.link"
       :url="currentProject.link"
@@ -61,5 +59,11 @@ import Link from '../components/link.vue'
   gap: 0.2rem;
   width: 100%;
   height: fit-content;
+}
+
+.cover {
+  min-height: 200px;
+  max-height: 200px;
+  object-fit: cover;
 }
 </style>

@@ -53,7 +53,7 @@ const handleIconClick = (icon) => {
       <img
         :src="icon.src"
         :alt="icon.text"
-        width="32"
+        width="38"
       />
       <p :class="{ select: icon.text === 'About' }">{{ icon.text }}</p>
     </div>

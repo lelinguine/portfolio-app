@@ -110,4 +110,13 @@ const props = defineProps({
   padding: 0 0.4rem 0;
   background-color: var(--white);
 }
+
+.dragging {
+  color: transparent;
+  background-color: transparent;
+}
+
+.dragging * {
+  visibility: hidden;
+}
 </style>
