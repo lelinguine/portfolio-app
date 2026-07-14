@@ -7,6 +7,7 @@ import About from '../views/about.vue'
 import More from '../views/more.vue'
 import Files from '../views/file.vue'
 import Project from '../views/project.vue'
+import Privacy from '../views/privacy.vue'
 
 const windows = [
   {
@@ -41,6 +42,14 @@ const windows = [
     width: '340px',
     height: 'fit-content',
   },
+  {
+    id: 'privacy',
+    component: 'Privacy',
+    top: '60%',
+    left: '30%',
+    width: '340px',
+    height: 'fit-content',
+  },
 ]
 </script>
 
@@ -59,5 +68,6 @@ const windows = [
     <Files v-else-if="window.component === 'Files'" />
     <Project v-else-if="window.component === 'Project'" />
     <More v-else-if="window.component === 'More'" />
+    <Privacy v-else-if="window.component === 'Privacy'" />
   </Window>
 </template>

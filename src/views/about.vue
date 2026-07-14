@@ -1,22 +1,42 @@
+<script setup>
+import { ref } from 'vue'
+
+import profile from '../assets/profile.jpeg'
+import icon from '../assets/icon.jpg'
+
+const isAlternateProfile = ref(false)
+
+const profileImage = ref(icon)
+
+function changeProfileImage() {
+  isAlternateProfile.value = !isAlternateProfile.value
+  profileImage.value = isAlternateProfile.value ? icon : profile
+}
+</script>
+
 <template>
   <div class="about-container">
     <div class="about">
       <img
-        class="absolute"
+        class="vector absolute"
         src="../assets/vector.png"
         alt="vector"
-        width="90"
       />
       <p>Valentin LUGINBÜHL</p>
       <h1>DEVELOPER & DESIGNER</h1>
     </div>
+
+    <img
+      class="profile hover"
+      :src="profileImage"
+      alt="profile"
+      @click="changeProfileImage"
+    />
     <div class="about-description">
       <p>
-        Dolore eu amet est esse irure et labore velit. In sunt reprhenderit nisi aliqua et ex
-        voluptate magnae laborum qui ea ad dolor Lorem. Pariatur qui velit ut in deserunt et nisi
-        qui in eu irure exercitation. Mollit tempor exercitation adipisicing tempor elit amet enim
-        id consequat incididunt. Et anim non commodo nisi aliquip. Velit elit magna elit nulla ea
-        fugiat laboris elit sunt in nostrud nisi.
+        Hi and welcome to my portfolio. I am a software engineer who loves creating complete,
+        enjoyable, and user-centric experiences. Here, you can explore some of the projects I’ve
+        worked on so far—enjoy your visit!
       </p>
     </div>
   </div>
@@ -41,11 +61,22 @@
   position: relative;
 }
 
+.profile {
+  border-radius: 100px;
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+}
+
 .absolute {
   position: absolute;
   top: 0;
   left: 0;
   margin: -2px -12px;
+}
+
+.vector {
+  width: 90px;
 }
 
 .about-description {

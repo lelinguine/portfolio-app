@@ -29,6 +29,12 @@ const icons = [
     text: 'More',
     src: new URL('./../assets/icons/more.png', import.meta.url).href,
   },
+
+  {
+    id: 'privacy',
+    text: 'Privacy',
+    src: new URL('./../assets/icons/privacy.png', import.meta.url).href,
+  },
 ]
 
 const handleIconClick = (icon) => {
