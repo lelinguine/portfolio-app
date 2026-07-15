@@ -62,6 +62,7 @@ const handleIconClick = (icon) => {
         width="38"
         height="38"
         alt="Icon for {{ icon.text }}"
+        loading="lazy"
       />
       <p :class="{ select: icon.text === 'About' }">{{ icon.text }}</p>
     </div>

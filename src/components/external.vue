@@ -31,6 +31,7 @@ const links = [
         :src="link.img"
         width="20"
         alt="Link to {{ link.text }}"
+        loading="lazy"
       />
       <div class="disable">{{ link.text }}</div>
     </a>

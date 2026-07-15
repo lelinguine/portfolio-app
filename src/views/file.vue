@@ -23,6 +23,7 @@ const handleIconClick = (file) => {
         class="cover"
         :src="file.cover"
         alt="Cover image of the project {{ file.title }}"
+        loading="lazy"
       />
       <p>{{ file.title }}</p>
       <span class="date">{{ file.date }}</span>

@@ -15,6 +15,7 @@ import Link from '../components/link.vue'
       class="cover"
       :src="currentProject.cover"
       alt="Cover image of the project {{ currentProject.title }}"
+      loading="lazy"
     />
 
     <Link

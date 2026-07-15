@@ -21,6 +21,7 @@ function changeProfileImage() {
         class="vector absolute"
         src="../assets/vector.png"
         alt="Vector illustration"
+        loading="lazy"
       />
       <p>Valentin LUGINBÜHL</p>
       <h1>DEVELOPER & DESIGNER</h1>
@@ -31,6 +32,7 @@ function changeProfileImage() {
       :src="profileImage"
       alt="Profile picture"
       @click="changeProfileImage"
+      loading="lazy"
     />
     <div class="about-description">
       <p>
