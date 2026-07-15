@@ -7,6 +7,7 @@ export const files = [
     description: `Sitomnia is an application designed to help older adults organize their daily lives. It provides a note-taking tool and a calendar, both tailored to their specific habits and needs. The app also features an AI-powered conversational agent specifically adapted for this demographic, enabling users to ask questions and receive simple, accessible assistance.\n
       Sitomnia was developed using a co-design approach as part of a thesis on participatory design methods. End users were involved throughout the development cycle, ensuring the creation of an application truly suited to their expectations, usage patterns, and needs.`,
     link: 'https://sitomnia.valentinluginbuhl.fr',
+    stack: 'NextJS, FastAPI, Ollama',
     wiki: 'https://github.com/lelinguine/sitomnia-project/wiki',
     github: 'https://github.com/lelinguine/sitomnia-project',
     figma: 'https://www.figma.com/community/file/1522331991896573429',
@@ -27,6 +28,7 @@ export const files = [
     cover: new URL('./../assets/covers/othello.png', import.meta.url).href,
     description: `TODO`,
     link: 'https://othello.valentinluginbuhl.fr',
+    github: 'https://github.com/lelinguine/othello-project',
   },
   {
     id: 'brainine',

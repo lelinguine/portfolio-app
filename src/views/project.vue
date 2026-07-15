@@ -22,11 +22,24 @@ import Link from '../components/link.vue'
       v-if="currentProject.link"
       :url="currentProject.link"
     />
-    <p class="description">
+    <p
+      class="description"
+      v-if="currentProject.description"
+    >
       {{ currentProject.description }}
     </p>
 
-    <p>image du projet</p>
+    <p>TODO : img</p>
+
+    <ul class="link-list">
+      <li
+        class="link"
+        v-if="currentProject.stack"
+      >
+        <p>Stack:</p>
+        <span>{{ currentProject.stack }}</span>
+      </li>
+    </ul>
 
     <ul class="link-list">
       <li
