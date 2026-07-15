@@ -1,5 +1,6 @@
 <script setup>
 import { SpeedInsights } from '@vercel/speed-insights/vue'
+import { Analytics } from '@vercel/analytics/vue'
 
 import Externals from './components/external.vue'
 import Icons from './components/icon.vue'
@@ -24,6 +25,7 @@ import Timer from './components/timer.vue'
       <Icons />
       <Manager />
       <Mouse />
+      <Analytics mode="production" />
       <SpeedInsights />
     </main>
   </div>
