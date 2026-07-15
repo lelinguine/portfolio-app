@@ -58,10 +58,9 @@ const handleIconClick = (icon) => {
     >
       <img
         :src="icon.src"
-        :alt="icon.text"
         width="38"
         height="38"
-        alt="Icon for {{ icon.text }}"
+        :alt="`Icon for ${icon.text}`"
         loading="lazy"
       />
       <p :class="{ select: icon.text === 'About' }">{{ icon.text }}</p>

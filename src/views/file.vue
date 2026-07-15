@@ -22,7 +22,7 @@ const handleIconClick = (file) => {
         v-if="file.cover"
         class="cover"
         :src="file.cover"
-        alt="Cover image of the project {{ file.title }}"
+        :alt="`Cover image of the project ${file.title}`"
         loading="lazy"
       />
       <p>{{ file.title }}</p>

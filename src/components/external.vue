@@ -30,7 +30,8 @@ const links = [
       <img
         :src="link.img"
         width="20"
-        alt="Link to {{ link.text }}"
+        height="20"
+        :alt="`Link to ${link.text}`"
         loading="lazy"
       />
       <div class="disable">{{ link.text }}</div>
@@ -55,6 +56,8 @@ const links = [
 }
 
 .external img {
+  width: 20px;
+  height: 20px;
   margin-right: 0.7em;
 }
 

@@ -10,22 +10,20 @@
 }
 
 @font-face {
-  font-family: 'Poly';
-  src: url('./assets/fonts/Poly/Poly-Regular.woff2') format('woff2');
-  font-weight: 400;
+  font-family: 'Poppins';
+  font-weight: 500;
   font-display: swap;
+  src: url('/fonts/Poppins/Poppins-Medium.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('./assets/fonts/Poppins/Poppins-Medium.woff2') format('woff2');
-  font-weight: 500;
+  font-family: 'Poly';
+  font-weight: 400;
   font-display: swap;
+  src: url('/fonts/Poly/Poly-Regular.woff2') format('woff2');
 }
 
-body,
-.container,
-#main {
+body {
   margin: 0;
   background: var(--primary);
   background-image: url('./assets/richter_zari.jpg');
