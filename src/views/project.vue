@@ -29,13 +29,19 @@ import Link from '../components/link.vue'
       {{ currentProject.description }}
     </p>
 
-    <p>TODO : img</p>
+    <img
+      v-for="image in currentProject.images"
+      :key="image.src"
+      :src="image.src"
+      :alt="image.alt"
+      loading="lazy"
+    />
 
-    <ul class="link-list">
-      <li
-        class="link"
-        v-if="currentProject.stack"
-      >
+    <ul
+      class="link-list"
+      v-if="currentProject.stack"
+    >
+      <li class="link">
         <p>Stack:</p>
         <span>{{ currentProject.stack }}</span>
       </li>
