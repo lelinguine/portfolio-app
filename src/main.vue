@@ -1,5 +1,5 @@
 <script setup>
-import { SpeedInsights } from '@vercel/speed-insights/next'
+import { SpeedInsights } from '@vercel/speed-insights/vue'
 
 import Externals from './components/external.vue'
 import Icons from './components/icon.vue'
