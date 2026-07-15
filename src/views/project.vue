@@ -14,7 +14,7 @@ import Link from '../components/link.vue'
       v-if="currentProject.cover"
       class="cover"
       :src="currentProject.cover"
-      alt="Cover image of the project"
+      alt="Cover image of the project {{ currentProject.title }}"
     />
 
     <Link

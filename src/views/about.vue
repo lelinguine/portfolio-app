@@ -20,7 +20,7 @@ function changeProfileImage() {
       <img
         class="vector absolute"
         src="../assets/vector.png"
-        alt="vector"
+        alt="Vector illustration"
       />
       <p>Valentin LUGINBÜHL</p>
       <h1>DEVELOPER & DESIGNER</h1>
@@ -29,7 +29,7 @@ function changeProfileImage() {
     <img
       class="profile hover"
       :src="profileImage"
-      alt="profile"
+      alt="Profile picture"
       @click="changeProfileImage"
     />
     <div class="about-description">

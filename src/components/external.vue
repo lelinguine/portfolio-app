@@ -30,6 +30,7 @@ const links = [
       <img
         :src="link.img"
         width="20"
+        alt="Link to {{ link.text }}"
       />
       <div class="disable">{{ link.text }}</div>
     </a>

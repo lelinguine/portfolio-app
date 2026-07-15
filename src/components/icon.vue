@@ -22,7 +22,7 @@ const icons = [
     id: 'contact',
     text: 'Contact',
     src: new URL('./../assets/icons/contact.png', import.meta.url).href,
-    href: 'mailto:lelinguine@icloud.com',
+    href: 'https://fr.linkedin.com/in/lelinguine',
   },
   {
     id: 'more',
@@ -60,6 +60,8 @@ const handleIconClick = (icon) => {
         :src="icon.src"
         :alt="icon.text"
         width="38"
+        height="38"
+        alt="Icon for {{ icon.text }}"
       />
       <p :class="{ select: icon.text === 'About' }">{{ icon.text }}</p>
     </div>
