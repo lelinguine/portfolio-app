@@ -30,6 +30,7 @@ import Link from '../components/link.vue'
     </p>
 
     <img
+      class="screenshot"
       v-for="image in currentProject.images"
       :key="image.src"
       :src="image.src"
@@ -156,5 +157,9 @@ import Link from '../components/link.vue'
 
 .description {
   white-space: pre-line;
+}
+
+.screenshot {
+  border: 2px solid var(--black);
 }
 </style>
