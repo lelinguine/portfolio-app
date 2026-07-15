@@ -1,4 +1,6 @@
 <script setup>
+import { SpeedInsights } from '@vercel/speed-insights/next'
+
 import Externals from './components/external.vue'
 import Icons from './components/icon.vue'
 import Manager from './components/manager.vue'
@@ -22,6 +24,7 @@ import Timer from './components/timer.vue'
       <Icons />
       <Manager />
       <Mouse />
+      <SpeedInsights />
     </main>
   </div>
 </template>
