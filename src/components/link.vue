@@ -13,6 +13,7 @@ const props = defineProps({
       class="link hover"
       :href="props.url"
       target="_blank"
+      rel="noopener noreferrer"
     >
       Run project
     </a>

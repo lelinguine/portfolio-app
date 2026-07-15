@@ -21,13 +21,57 @@ import Link from '../components/link.vue'
       v-if="currentProject.link"
       :url="currentProject.link"
     />
-    <p>
+    <p class="description">
       {{ currentProject.description }}
     </p>
 
-    <p>Lien github, figma...</p>
-
     <p>image du projet</p>
+
+    <ul class="link-list">
+      <li
+        class="link"
+        v-if="currentProject.github"
+      >
+        <p>GitHub:</p>
+        <a
+          class="hover"
+          :href="currentProject.github"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          See repository
+        </a>
+      </li>
+      <li
+        class="link"
+        v-if="currentProject.figma"
+      >
+        <p>Figma:</p>
+        <a
+          class="hover"
+          :href="currentProject.figma"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          See prototype
+        </a>
+      </li>
+
+      <li
+        class="link"
+        v-if="currentProject.wiki"
+      >
+        <p>Wiki:</p>
+        <a
+          class="hover"
+          :href="currentProject.wiki"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          See documentation
+        </a>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -61,9 +105,36 @@ import Link from '../components/link.vue'
   height: fit-content;
 }
 
+.link-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  width: 100%;
+  height: fit-content;
+}
+
+.link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.2rem;
+  width: 100%;
+  height: fit-content;
+}
+
+.link a {
+  text-decoration: underline;
+}
+
 .cover {
   min-height: 200px;
   max-height: 200px;
   object-fit: cover;
+}
+
+.description {
+  white-space: pre-line;
 }
 </style>

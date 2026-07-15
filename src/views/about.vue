@@ -10,7 +10,7 @@ const profileImage = ref(icon)
 
 function changeProfileImage() {
   isAlternateProfile.value = !isAlternateProfile.value
-  profileImage.value = isAlternateProfile.value ? icon : profile
+  profileImage.value = isAlternateProfile.value ? profile : icon
 }
 </script>
 
