@@ -1,6 +1,6 @@
 {
   "name": "lelinguine-portfolio",
-  "version": "0.0.0",
+  "version": "3.0-r",
   "private": true,
   "type": "module",
   "scripts": {
@@ -9,10 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "vue": "^3.4.21"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
+    "prettier": "3.8.1",
     "vite": "^5.2.8"
   }
 }

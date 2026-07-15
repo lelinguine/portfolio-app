@@ -1,32 +1,31 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted } from 'vue'
 
-const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
-const currentTime = ref('');
+const currentTime = ref('')
 
 const updateTime = () => {
-  const now = new Date();
-  const dayName = days[now.getDay()];
-  const monthName = months[now.getMonth()];
-  const day = now.getDate();
-  let hours = now.getHours();
-  const minutes = String(now.getMinutes()).padStart(2, '0');
-  const ampm = hours >= 12 ? 'PM' : 'AM';
-  hours = hours % 12;
-  hours = hours ? hours : 12; // the hour '0' should be '12'
-  const hourStr = String(hours).padStart(2, '0');
-  currentTime.value = `${dayName} ${day} ${monthName} ${hourStr}:${minutes}${ampm}`;
-};
+  const now = new Date()
+  const dayName = days[now.getDay()]
+  const monthName = months[now.getMonth()]
+  const day = now.getDate()
+  let hours = now.getHours()
+  const minutes = String(now.getMinutes()).padStart(2, '0')
+  const ampm = hours >= 12 ? 'PM' : 'AM'
+  hours = hours % 12
+  hours = hours ? hours : 12 // the hour '0' should be '12'
+  const hourStr = String(hours).padStart(2, '0')
+  currentTime.value = `${dayName} ${day} ${monthName} ${hourStr}:${minutes}${ampm}`
+}
+
+let interval
 
 onMounted(() => {
-  updateTime();
-  const interval = setInterval(updateTime, 1000);
-  onUnmounted(() => {
-    clearInterval(interval);
-  });
-});
+  updateTime()
+  interval = setInterval(updateTime, 1000)
+})
 </script>
 
 <template>

@@ -1,0 +1,73 @@
+:root {
+  --primary: #708090;
+  --black: #000000;
+  --white: #ffffff;
+
+  --padding: 20px;
+  --gap: 20px;
+
+  --window-header-height: 40px;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-display: swap;
+  src: url('/fonts/Poppins/Poppins-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Poly';
+  font-display: swap;
+  src: url('/fonts/Poly/Poly-Regular.woff2') format('woff2');
+}
+
+body {
+  margin: 0;
+  background: var(--primary);
+  background-image: url('./assets/richter_zari.jpg');
+  background-size: cover;
+  background-position: center;
+  font-family: 'Poppins', sans-serif;
+  color: var(--black);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  overflow: hidden;
+}
+
+@media screen and (orientation: landscape) {
+  body,
+  body * {
+    cursor: none;
+  }
+}
+
+main {
+  height: calc(100vh - 2 * var(--window-header-height));
+}
+
+h1 {
+  margin: 0;
+  font-family: 'Poly', serif;
+  font-size: 1.2rem;
+}
+
+.date {
+  margin-top: -0.2rem;
+  font-size: 0.8rem;
+}
+
+a,
+p,
+span {
+  margin: 0;
+}
+
+a {
+  color: var(--black);
+  text-decoration: none;
+}

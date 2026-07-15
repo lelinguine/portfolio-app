@@ -1,6 +1,11 @@
-import './assets/main.css'
+import './main.css'
+
+import { inject } from '@vercel/analytics'
+inject()
 
 import { createApp } from 'vue'
 import App from './main.vue'
 
-createApp(App).mount('#main')
+const app = createApp(App)
+
+app.mount('#main')

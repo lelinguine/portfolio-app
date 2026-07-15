@@ -1,46 +1,73 @@
 <script setup>
-import Window from "./window.vue";
-import About from "./about.vue";
-import More from "./more.vue";
-import Files from "./files.vue";
+import '../utils/draggable.js'
+
+import Window from './window.vue'
+
+import About from '../views/about.vue'
+import More from '../views/more.vue'
+import Files from '../views/file.vue'
+import Project from '../views/project.vue'
+import Privacy from '../views/privacy.vue'
 
 const windows = [
   {
-    component: "About",
-    top: "20%",
-    left: "10%",
-    width: "340px",
-    height: "180px",
+    id: 'about',
+    component: 'About',
+    top: '20%',
+    left: '10%',
+    width: '340px',
+    height: 'fit-content',
   },
-  // {
-  //   component: "Files",
-  //   top: "30%",
-  //   left: "50%",
-  //   width: "540px",
-  //   height: "340px",
-  // },
   {
-    component: "More",
-    top: "60%",
-    left: "20%",
-    width: "340px",
-    height: "180px",
+    id: 'files',
+    component: 'Files',
+    top: '30%',
+    left: '50%',
+    width: '540px',
+    height: '340px',
   },
-];
+  {
+    id: 'project',
+    component: 'Project',
+    top: '10%',
+    left: '40%',
+    width: '340px',
+    height: '540px',
+  },
+  {
+    id: 'more',
+    component: 'More',
+    top: '70%',
+    left: '20%',
+    width: '340px',
+    height: 'fit-content',
+  },
+  {
+    id: 'privacy',
+    component: 'Privacy',
+    top: '60%',
+    left: '30%',
+    width: '340px',
+    height: 'fit-content',
+  },
+]
 </script>
 
 <template>
   <Window
-    v-for="(windows, index) in windows"
+    v-for="(window, index) in windows"
     :key="index"
-    :header="windows.component"
-    :width="windows.width"
-    :height="windows.height"
-    :top="windows.top"
-    :left="windows.left"
+    :id="window.id"
+    :header="window.component"
+    :width="window.width"
+    :height="window.height"
+    :top="window.top"
+    :left="window.left"
   >
-    <About v-if="windows.component === 'About'" />
-    <Files v-else-if="windows.component === 'Files'" />
-    <More v-else-if="windows.component === 'More'" />
+    <About v-if="window.component === 'About'" />
+    <Files v-else-if="window.component === 'Files'" />
+    <Project v-else-if="window.component === 'Project'" />
+    <More v-else-if="window.component === 'More'" />
+    <Privacy v-else-if="window.component === 'Privacy'" />
   </Window>
 </template>

@@ -1,5 +1,11 @@
 <script setup>
+import XMark from './icons/x-mark.vue'
+
 const props = defineProps({
+  id: {
+    type: String,
+    required: true,
+  },
   header: {
     type: String,
     required: true,
@@ -20,7 +26,7 @@ const props = defineProps({
     type: String,
     default: 0,
   },
-});
+})
 </script>
 
 <template>
@@ -31,16 +37,15 @@ const props = defineProps({
       top: props.top,
       left: props.left,
     }"
-    :class="[
-      'window draggable border shadow',
-      { display: header === 'Files', other: header !== 'Files' },
-    ]"
+    :data-id="props.id"
+    :class="['window draggable border', { display: header === 'About', other: header !== 'About' }]"
   >
-    <div :class="['header header-border', { select: header === 'Files' }]">
+    <div :class="['header', { select: header === 'About' }]">
       <p>{{ header }}</p>
-      <!-- <div class="close hover">
-        <img src="../assets/cross.svg" alt="close" width="15" />
-      </div> -->
+
+      <div class="close hover">
+        <XMark />
+      </div>
     </div>
     <slot></slot>
   </div>
@@ -50,28 +55,33 @@ const props = defineProps({
 @media screen and (orientation: portrait) {
   .window {
     width: 100% !important;
-    height: calc(100% - 40px) !important;
-    top: 40px !important;
+    height: calc(100% - var(--window-header-height)) !important;
+    top: var(--window-header-height) !important;
     left: 0 !important;
     border: unset !important;
   }
 }
+
+.border {
+  border: solid 2px var(--black);
+}
+
 .draggable {
   position: absolute;
+  z-index: 1;
   background-color: var(--white);
   display: none;
 }
-.display,
-.other {
+.display {
   display: block;
 }
-@media screen and (orientation: portrait) {
-  .other {
-    display: none;
-  }
+
+.other {
+  display: none;
 }
+
 .header {
-  width: 100%;
+  width: calc(100% - 2 * 0 0.4rem);
   height: 38px;
   background-color: var(--white);
   color: var(--black);
@@ -79,11 +89,17 @@ const props = defineProps({
   justify-content: center;
   align-items: center;
   position: relative;
+  z-index: 1;
+  padding: 0 0.4rem;
+  gap: 0.4rem;
+  border-bottom: solid 2px var(--black);
 }
+
 .select {
   filter: invert(100%);
   border-bottom: solid 2px var(--white);
 }
+
 .close {
   position: absolute;
   right: 0.4rem;
@@ -92,5 +108,15 @@ const props = defineProps({
   justify-content: center;
   align-items: center;
   padding: 0 0.4rem 0;
+  background-color: var(--white);
+}
+
+.dragging {
+  color: transparent;
+  background-color: transparent;
+}
+
+.dragging * {
+  visibility: hidden;
 }
 </style>

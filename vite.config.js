@@ -9,14 +9,14 @@ export default defineConfig({
       template: {
         compilerOptions: {
           // Exclure `click-spark` de la résolution des composants
-          isCustomElement: tag => tag === 'click-spark'
-        }
-      }
+          isCustomElement: (tag) => tag === 'click-spark',
+        },
+      },
     }),
   ],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
-    }
-  }
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
+  },
 })
