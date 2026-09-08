@@ -1,11 +1,22 @@
 <script setup>
+import { ref, watch } from 'vue'
+
 import { currentProject } from '../utils/store.js'
 
 import Link from '../components/link.vue'
+
+const projectContainer = ref(null)
+
+watch(currentProject, () => {
+  projectContainer.value?.scrollTo({ top: 0, behavior: 'auto' })
+})
 </script>
 
 <template>
-  <div class="project-container">
+  <div
+    ref="projectContainer"
+    class="project-container"
+  >
     <div class="project-header">
       <h1>{{ currentProject.title }}</h1>
       <span class="date">{{ currentProject.date }}</span>
